@@ -1,14 +1,28 @@
+import sys
+import os
+
+sys.path.append(os.path.join(os.path.dirname(__file__), '../../../colored logs'))
+from colored_logs import ColoredLog
+
+
+log = ColoredLog()
+
+log.info("Starting lowercasing...")
+
 sentence = "Her cat's name is Luna"
-print(sentence)
+log.yellow(f"Original: {sentence}")
 lower_sentence = sentence.lower()
-print(lower_sentence)
+log.green(f"Lowercase: {lower_sentence}")
 
 sentenceList = [
     "Her cat's name is Luna",
-    "My cat's name is Luna",
-    "Her cat's name is Luna",
-    "Her cat's name is Luna",]
-print(sentenceList)
+    "MY CAT'S NAME IS LUNA",
+    "her cat's name is luna",
+    "HER CAT'S NAME IS LUNA",]
+
+log.yellow(f"Original list: {sentenceList}")
 lower_sentenceList = [sentence.lower() for sentence in sentenceList]
-print(lower_sentenceList)
+log.green(f"Lowercase list: {lower_sentenceList}")
+
+log.success("Lowercasing completed!")
 

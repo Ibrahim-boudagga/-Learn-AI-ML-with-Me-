@@ -23,8 +23,11 @@ This comprehensive course takes you from **absolute beginner** to **AI/ML practi
 
 ### **Phase 1: NLP Fundamentals** 🗣️
 - [x] **Text Preprocessing** - Lowercasing techniques and best practices
-- [x] **NLP Best Practices** - When to use vs when not to use lowercasing
+- [x] **Stopwords Removal** - NLTK integration with performance optimization
+- [x] **NLP Best Practices** - When to use vs when not to use preprocessing
 - [x] **Practical Examples** - Real code implementations in both Python and Jupyter
+- [x] **Colored Logging** - Professional console output for debugging
+- [x] **Performance Optimization** - List comprehensions vs loops for efficiency
 - [x] **Comprehensive Guide** - Detailed explanations for AI engineering students
 
 ### **Coming Soon** 🚧
@@ -41,13 +44,19 @@ This comprehensive course takes you from **absolute beginner** to **AI/ML practi
 AI Course/
 ├── 📁 AI bootcamp/
 │   └── 📁 1_NLP/
-│       └── 📁 lowercasing/
-│           ├── 📄 README.md          # Comprehensive NLP preprocessing guide
-│           ├── 📄 lowercasing.py     # Python script with practical examples
-│           └── 📄 lowercasing.ipynb  # Jupyter notebook with interactive examples
+│       ├── 📁 1_Lowercasing/
+│       │   ├── 📄 README.md          # Comprehensive NLP preprocessing guide
+│       │   ├── 📄 lowercasing.py     # Python script with colored logging
+│       │   └── 📄 lowercasing.ipynb  # Jupyter notebook with interactive examples
+│       └── 📁 2_StopWords/
+│           ├── 📄 Stopwords.ipynb    # Interactive stopwords tutorial
+│           └── 📄 StopWords.py       # Optimized stopwords implementation
+├── 📁 colored logs/
+│   └── 📄 colored_logs.py            # Professional colored logging utility
 ├── 📁 ML/
 │   ├── 📁 Py/                        # Python ML projects (coming soon)
 │   └── 📁 R/                         # R ML projects (coming soon)
+├── 📄 .gitignore                     # Git ignore rules
 └── 📄 README.md                      # This file
 ```
 
@@ -60,35 +69,55 @@ AI Course/
 # Install Python 3.8+
 python --version
 
+# Install required packages
+pip install nltk colorama
+
 # Clone the repository
 git clone https://github.com/Ibrahim-boudagga/-Learn-AI-ML-with-Me-.git
 cd -Learn-AI-ML-with-Me-
 ```
 
 ### **Start Learning**
-1. **Begin with NLP** → `AI bootcamp/1_NLP/lowercasing/`
+1. **Begin with NLP** → `AI bootcamp/1_NLP/1_Lowercasing/`
 2. **Read the guide** → `README.md` for comprehensive explanations
 3. **Practice with code** → `lowercasing.py` for hands-on examples
 4. **Interactive learning** → `lowercasing.ipynb` for Jupyter notebook
+5. **Continue with Stopwords** → `AI bootcamp/1_NLP/2_StopWords/`
 
 ---
 
 ## 📖 **Featured Content**
 
 ### **NLP Fundamentals** 🗣️
-- **Text Preprocessing**: Lowercasing, when to use and when not to use
+- **Text Preprocessing**: Lowercasing, stopwords removal, when to use and when not to use
 - **Best Practices**: Industry standards for NLP preprocessing
 - **Real Applications**: Practical examples for different NLP tasks
 - **Interactive Learning**: Jupyter notebooks with live examples
+- **Professional Logging**: Colored console output for better debugging
+- **Performance Optimization**: Efficient coding practices for NLP
 
 ```python
-# Example: Context-aware text preprocessing
-def preprocess_text(text, task_type="classification"):
-    if task_type == "classification":
-        return text.lower().strip()
-    elif task_type == "ner":
-        return text  # Preserve case for named entities
-    return text
+# Example: Optimized stopwords removal with colored logging
+from colored_logs import ColoredLog
+import nltk
+from nltk.corpus import stopwords
+
+log = ColoredLog()
+log.info("Starting NLP preprocessing...")
+
+# ✅ BEST METHOD: List comprehension (2x faster)
+sentence = "it was too far to go to the shop and he did not want her to walk"
+en_stopwords = stopwords.words('english')
+
+# Optimized approach
+sentence_no_stopwords = ' '.join([
+    word for word in sentence.split() 
+    if word not in en_stopwords and word.isalpha()
+])
+
+log.success(f"Original: {sentence}")
+log.success(f"Filtered: {sentence_no_stopwords}")
+log.info("Stopwords removal completed!")
 ```
 
 **Key Learning Points:**
@@ -96,12 +125,16 @@ def preprocess_text(text, task_type="classification"):
 - **Model Performance**: Better word frequency analysis
 - **Text Standardization**: Consistent feature extraction
 - **Context Matters**: Different tasks require different approaches
+- **Professional Debugging**: Colored logging for better development experience
+- **Performance Optimization**: List comprehensions vs loops for efficiency
 
 ### **Current Examples Include:**
-- **Basic lowercasing** - Simple string conversion
-- **List comprehension** - Processing multiple sentences
+- **Basic lowercasing** - Simple string conversion with colored output
+- **List comprehension** - Processing multiple sentences efficiently
+- **Stopwords removal** - NLTK integration with performance optimization
 - **Real-world scenarios** - When to use vs when not to use
 - **Best practices** - Industry standards and guidelines
+- **Performance comparison** - Efficient vs inefficient methods
 
 ---
 
@@ -110,6 +143,8 @@ def preprocess_text(text, task_type="classification"):
 ### **Current Stack**
 - **Python 3.8+** - Primary programming language
 - **Jupyter Notebooks** - Interactive learning environment
+- **NLTK** - Natural language processing toolkit
+- **Colorama** - Cross-platform colored terminal output
 - **Git & GitHub** - Version control and collaboration
 
 ### **Planned Technologies**
@@ -117,7 +152,7 @@ def preprocess_text(text, task_type="classification"):
 - **TensorFlow/Keras** - Deep learning framework
 - **PyTorch** - Research and production ML
 - **Pandas/NumPy** - Data manipulation and analysis
-- **NLTK/spaCy** - Natural language processing
+- **spaCy** - Advanced natural language processing
 - **OpenCV** - Computer vision and image processing
 
 ---
@@ -127,6 +162,8 @@ def preprocess_text(text, task_type="classification"):
 ### **Hands-On Learning**
 - **Real Code Examples** - Production-ready implementations
 - **Interactive Notebooks** - Jupyter notebooks with live examples
+- **Professional Logging** - Colored console output for debugging
+- **Performance Optimization** - Efficient coding practices
 - **Practical Projects** - Industry-relevant applications
 - **Best Practices** - Industry standards and conventions
 
@@ -164,6 +201,8 @@ We welcome contributions! Here's how you can help:
 ### **Current Phase** 🎯
 - **NLP Fundamentals** - Text preprocessing and best practices
 - **Practical Implementation** - Real code examples in Python and Jupyter
+- **Professional Tools** - Colored logging and debugging utilities
+- **Performance Optimization** - Efficient coding practices for NLP
 - **Industry Standards** - When and how to apply techniques
 - **Interactive Learning** - Hands-on experience with notebooks
 
@@ -186,6 +225,8 @@ We welcome contributions! Here's how you can help:
 - **Documentation** - Comprehensive guides and tutorials
 - **Code Examples** - Hands-on coding exercises
 - **Interactive Notebooks** - Live examples and experiments
+- **Professional Tools** - Colored logging and debugging utilities
+- **Performance Guides** - Optimization best practices
 - **Best Practices** - Industry standards and conventions
 
 ---
