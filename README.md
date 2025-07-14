@@ -28,7 +28,7 @@ This comprehensive course takes you from **absolute beginner** to **AI/ML practi
 - [x] **Practical Examples** - Real code implementations in both Python and Jupyter
 - [x] **Colored Logging** - Professional console output for debugging
 - [x] **Performance Optimization** - List comprehensions vs loops for efficiency
-- [x] **Comprehensive Guide** - Detailed explanations for AI engineering students
+- [x] **Comprehensive Guides** - Detailed explanations for AI engineering students
 
 ### **Coming Soon** 🚧
 - **Machine Learning** - Supervised and unsupervised learning
@@ -49,8 +49,9 @@ AI Course/
 │       │   ├── 📄 lowercasing.py     # Python script with colored logging
 │       │   └── 📄 lowercasing.ipynb  # Jupyter notebook with interactive examples
 │       └── 📁 2_StopWords/
-│           ├── 📄 Stopwords.ipynb    # Interactive stopwords tutorial
-│           └── 📄 StopWords.py       # Optimized stopwords implementation
+│           ├── 📄 README.md          # Stopwords removal guide with icons
+│           ├── 📄 StopWords.py       # Optimized stopwords implementation
+│           └── 📄 Stopwords.ipynb    # Interactive stopwords tutorial
 ├── 📁 colored logs/
 │   └── 📄 colored_logs.py            # Professional colored logging utility
 ├── 📁 ML/
@@ -147,7 +148,7 @@ log.info("Stopwords removal completed!")
 - **Colorama** - Cross-platform colored terminal output
 - **Git & GitHub** - Version control and collaboration
 
-### **Planned Technologies**
+### **Coming Soon**
 - **Scikit-learn** - Traditional ML algorithms
 - **TensorFlow/Keras** - Deep learning framework
 - **PyTorch** - Research and production ML
@@ -206,7 +207,7 @@ We welcome contributions! Here's how you can help:
 - **Industry Standards** - When and how to apply techniques
 - **Interactive Learning** - Hands-on experience with notebooks
 
-### **Next Phases** 🚀
+### **Coming Soon** 🚀
 - **Machine Learning** - Supervised and unsupervised learning
 - **Deep Learning** - Neural networks and advanced architectures
 - **Computer Vision** - Image processing and object detection
