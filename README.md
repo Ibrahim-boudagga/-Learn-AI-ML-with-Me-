@@ -26,6 +26,7 @@ This comprehensive course takes you from **absolute beginner** to **AI/ML practi
 - [x] **Stopwords Removal** - NLTK integration with performance optimization
 - [x] **Regular Expressions** - Pattern matching and text manipulation
 - [x] **Text Tokenization** - Word and sentence tokenization with NLTK
+- [x] **Text Stemming** - Word root reduction with Porter and Lancaster stemmers
 - [x] **NLP Best Practices** - When to use vs when not to use preprocessing
 - [x] **Practical Examples** - Real code implementations in both Python and Jupyter
 - [x] **Colored Logging** - Professional console output for debugging
@@ -59,10 +60,14 @@ AI Course/
 │           │   ├── 📄 README.md          # Regex pattern matching guide
 │           │   ├── 📄 regx.py            # Regex examples with colored logging
 │           │   └── 📄 2.4 Regular Expressions.ipynb  # Interactive regex tutorial
-│           └── 📁 4_tokenization/
-│               ├── 📄 README.md          # Tokenization guide with NLTK
-│               ├── 📄 tokenization.py    # Tokenization examples with colored logging
-│               └── 📄 2.5 Tokenizing Text.ipynb  # Interactive tokenization tutorial
+│           ├── 📁 4_tokenization/
+│           │   ├── 📄 README.md          # Tokenization guide with NLTK
+│           │   ├── 📄 tokenization.py    # Tokenization examples with colored logging
+│           │   └── 📄 2.5 Tokenizing Text.ipynb  # Interactive tokenization tutorial
+│           └── 📁 5_Stemming/
+│               ├── 📄 README.md          # Stemming guide with Porter and Lancaster
+│               ├── 📄 Stemming.py        # Stemming examples with colored logging
+│               └── 📄 Stemming.ipynb     # Interactive stemming tutorial
 ├── 📁 ColoredLogs/
 │   ├── 📄 __init__.py               # Package initialization
 │   ├── 📄 colored_logs.py           # Professional colored logging utility
@@ -92,14 +97,16 @@ cd -Learn-AI-ML-with-Me-
 ```
 
 ### **Start Learning**
-1. **Begin with NLP** → `AI bootcamp/1_NLP/1_text_preprocessing/1_Lowercasing/`
-2. **Read the guide** → `README.md` for comprehensive explanations
-3. **Practice with code** → `lowercasing.py` for hands-on examples
-4. **Interactive learning** → `lowercasing.ipynb` for Jupyter notebook
-5. **Continue with Stopwords** → `AI bootcamp/1_NLP/1_text_preprocessing/2_StopWords/`
-6. **Learn Regex** → `AI bootcamp/1_NLP/1_text_preprocessing/3_Regular_Expression/`
-7. **Master Tokenization** → `AI bootcamp/1_NLP/1_text_preprocessing/4_tokenization/`
-8. **Use Colored Logging** → `ColoredLogs/` for professional debugging
+1. **Understand NLP** → `AI bootcamp/1_NLP/README.md` for comprehensive overview
+2. **Begin with Lowercasing** → `AI bootcamp/1_NLP/1_text_preprocessing/1_Lowercasing/`
+3. **Read the guides** → Each section has detailed explanations
+4. **Practice with code** → Python scripts with colored logging
+5. **Interactive learning** → Jupyter notebooks for hands-on experience
+6. **Continue with Stopwords** → `AI bootcamp/1_NLP/1_text_preprocessing/2_StopWords/`
+7. **Learn Regex** → `AI bootcamp/1_NLP/1_text_preprocessing/3_Regular_Expression/`
+8. **Master Tokenization** → `AI bootcamp/1_NLP/1_text_preprocessing/4_tokenization/`
+9. **Learn Stemming** → `AI bootcamp/1_NLP/1_text_preprocessing/5_Stemming/`
+10. **Use Colored Logging** → `ColoredLogs/` for professional debugging
 
 ---
 
@@ -108,6 +115,7 @@ cd -Learn-AI-ML-with-Me-
 ### **NLP Fundamentals** 🗣️
 - **Text Preprocessing**: Lowercasing, stopwords removal, when to use and when not to use
 - **Text Tokenization**: Word and sentence tokenization with NLTK
+- **Text Stemming**: Word root reduction with Porter and Lancaster stemmers
 - **Best Practices**: Industry standards for NLP preprocessing
 - **Real Applications**: Practical examples for different NLP tasks
 - **Interactive Learning**: Jupyter notebooks with live examples
@@ -115,32 +123,36 @@ cd -Learn-AI-ML-with-Me-
 - **Performance Optimization**: Efficient coding practices for NLP
 
 ```python
-# Example: Optimized stopwords removal with colored logging
-from colored_logs import ColoredLog
+# Example: Optimized NLP preprocessing with colored logging
+from ColoredLogs import Debugger
 import nltk
 from nltk.corpus import stopwords
+from nltk.stem import PorterStemmer
 
-log = ColoredLog()
-log.info("Starting NLP preprocessing...")
+Debugger.info("Starting NLP preprocessing...")
 
-# ✅ BEST METHOD: List comprehension (2x faster)
-sentence = "it was too far to go to the shop and he did not want her to walk"
+# ✅ BEST METHOD: Complete preprocessing pipeline
+sentence = "The quick brown foxes are running and jumping over the lazy dogs"
 en_stopwords = stopwords.words('english')
+ps = PorterStemmer()
 
-# Optimized approach
-sentence_no_stopwords = ' '.join([
-    word for word in sentence.split() 
+# Optimized preprocessing pipeline
+words = sentence.lower().split()
+filtered_words = [
+    ps.stem(word) for word in words 
     if word not in en_stopwords and word.isalpha()
-])
+]
+processed_sentence = ' '.join(filtered_words)
 
-log.success(f"Original: {sentence}")
-log.success(f"Filtered: {sentence_no_stopwords}")
-log.info("Stopwords removal completed!")
+Debugger.success(f"Original: {sentence}")
+Debugger.success(f"Processed: {processed_sentence}")
+Debugger.info("NLP preprocessing completed!")
 ```
 
 **Key Learning Points:**
 - **Vocabulary Reduction**: Lowercasing reduces vocabulary size by 30-40%
 - **Text Tokenization**: Breaking text into meaningful units for analysis
+- **Text Stemming**: Reducing words to root forms for better matching
 - **Model Performance**: Better word frequency analysis
 - **Text Standardization**: Consistent feature extraction
 - **Context Matters**: Different tasks require different approaches
@@ -152,6 +164,7 @@ log.info("Stopwords removal completed!")
 - **List comprehension** - Processing multiple sentences efficiently
 - **Stopwords removal** - NLTK integration with performance optimization
 - **Text tokenization** - Word and sentence tokenization with NLTK
+- **Text stemming** - Word root reduction with Porter and Lancaster stemmers
 - **Real-world scenarios** - When to use vs when not to use
 - **Best practices** - Industry standards and guidelines
 - **Performance comparison** - Efficient vs inefficient methods
