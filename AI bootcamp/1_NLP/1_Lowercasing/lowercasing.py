@@ -1,5 +1,4 @@
-import sys
-import os
+import sys,os
 
 sys.path.append(os.path.join(os.path.dirname(__file__), '../../../colored logs'))
 from colored_logs import ColoredLog
