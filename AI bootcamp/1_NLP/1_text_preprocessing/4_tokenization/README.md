@@ -169,7 +169,7 @@ print(f"Sentences: {sentences}")
 python tokenization.py
 
 # Open Jupyter notebook
-jupyter notebook "2.5 Tokenizing Text.ipynb"
+jupyter notebook "Tokenizing Text.ipynb"
 ```
 
 ---
