@@ -24,6 +24,7 @@ This comprehensive course takes you from **absolute beginner** to **AI/ML practi
 ### **Phase 1: NLP Fundamentals** 🗣️
 - [x] **Text Preprocessing** - Lowercasing techniques and best practices
 - [x] **Stopwords Removal** - NLTK integration with performance optimization
+- [x] **Regular Expressions** - Pattern matching and text manipulation
 - [x] **NLP Best Practices** - When to use vs when not to use preprocessing
 - [x] **Practical Examples** - Real code implementations in both Python and Jupyter
 - [x] **Colored Logging** - Professional console output for debugging
@@ -48,12 +49,18 @@ AI Course/
 │       │   ├── 📄 README.md          # Comprehensive NLP preprocessing guide
 │       │   ├── 📄 lowercasing.py     # Python script with colored logging
 │       │   └── 📄 lowercasing.ipynb  # Jupyter notebook with interactive examples
-│       └── 📁 2_StopWords/
-│           ├── 📄 README.md          # Stopwords removal guide with icons
-│           ├── 📄 StopWords.py       # Optimized stopwords implementation
-│           └── 📄 Stopwords.ipynb    # Interactive stopwords tutorial
-├── 📁 colored logs/
-│   └── 📄 colored_logs.py            # Professional colored logging utility
+│       ├── 📁 2_StopWords/
+│       │   ├── 📄 README.md          # Stopwords removal guide with icons
+│       │   ├── 📄 StopWords.py       # Optimized stopwords implementation
+│       │   └── 📄 Stopwords.ipynb    # Interactive stopwords tutorial
+│       └── 📁 3_Regular_Expression/
+│           ├── 📄 README.md          # Regex pattern matching guide
+│           ├── 📄 regx.py            # Regex examples with colored logging
+│           └── 📄 2.4 Regular Expressions.ipynb  # Interactive regex tutorial
+├── 📁 ColoredLogs/
+│   ├── 📄 __init__.py               # Package initialization
+│   ├── 📄 colored_logs.py           # Professional colored logging utility
+│   └── 📄 README.md                 # Colored logging documentation
 ├── 📁 ML/
 │   ├── 📁 Py/                        # Python ML projects (coming soon)
 │   └── 📁 R/                         # R ML projects (coming soon)
@@ -84,6 +91,8 @@ cd -Learn-AI-ML-with-Me-
 3. **Practice with code** → `lowercasing.py` for hands-on examples
 4. **Interactive learning** → `lowercasing.ipynb` for Jupyter notebook
 5. **Continue with Stopwords** → `AI bootcamp/1_NLP/2_StopWords/`
+6. **Learn Regex** → `AI bootcamp/1_NLP/3_Regular_Expression/`
+7. **Use Colored Logging** → `ColoredLogs/` for professional debugging
 
 ---
 

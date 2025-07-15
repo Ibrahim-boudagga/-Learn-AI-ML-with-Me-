@@ -21,6 +21,24 @@ Regular expressions (regex) are powerful pattern-matching tools used to search, 
 
 ---
 
+## 🚀 **Current Implementation**
+
+This module includes practical examples with professional colored logging:
+
+### **📁 Files Included**
+- **`regx.py`** - Python script with regex examples and colored logging
+- **`2.4 Regular Expressions.ipynb`** - Jupyter notebook for interactive learning
+- **`README.md`** - Comprehensive regex guide (this file)
+
+### **🎯 Key Features Demonstrated**
+- **Pattern matching** with `re.search()` and `re.findall()`
+- **Text substitution** with `re.sub()`
+- **Raw string handling** for Windows paths
+- **Professional logging** with ColoredLogs
+- **Real-world examples** for NLP applications
+
+---
+
 ## 🎯 **When to Use Regular Expressions**
 
 ### **✅ Perfect For:**
@@ -248,6 +266,17 @@ result = re.search(simple_pattern, "The fox is quick")
 ```python
 import re
 import pandas as pd
+from ColoredLogs import Debugger
+
+Debugger.info("Starting data analysis with regex...")
+
+# Extract patterns from text data
+text_data = ["user@example.com", "invalid.email", "test@domain.co.uk"]
+email_pattern = r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$'
+
+valid_emails = [email for email in text_data if re.match(email_pattern, email)]
+Debugger.success(f"Found {len(valid_emails)} valid emails: {valid_emails}")
+```
 
 # Extract dates from text
 text_data = [
