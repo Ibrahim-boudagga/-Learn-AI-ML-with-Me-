@@ -1,3 +1,7 @@
+import sys, os
+# Add the parent directory to the Python path to find ColoredLogs
+sys.path.append(os.path.join(os.path.dirname(__file__), '../../../'))
+
 from ColoredLogs import Debugger
 
 
