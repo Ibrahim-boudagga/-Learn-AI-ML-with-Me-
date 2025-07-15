@@ -1,22 +1,17 @@
-import sys,os
+from ColoredLogs import Debugger
 
-sys.path.append(os.path.join(os.path.dirname(__file__), '../../../colored logs'))
-from colored_logs import ColoredLog
-
-
-log = ColoredLog()
 
 # import packages
 import nltk 
-log.info("Downloading stopwords...")
+Debugger.info("Downloading stopwords...")
 nltk.download('stopwords')
 
-log.info("Getting English stopwords...")
+Debugger.info("Getting English stopwords...")
 en_stopwords = nltk.corpus.stopwords.words('english')
-log.green(f"English stopwords: {en_stopwords}")
+Debugger.green(f"English stopwords: {en_stopwords}")
 
 sentence = "The talented artist painted colorful murals on city walls"
-log.yellow(f"Original sentence: {sentence}")
+Debugger.yellow(f"Original sentence: {sentence}")
 
 sentence_without_stopwords = ' '.join([
     word 
@@ -26,7 +21,7 @@ sentence_without_stopwords = ' '.join([
     ])
 
 
-log.green(f"Sentence without stopwords: {sentence_without_stopwords}")
+Debugger.green(f"Sentence without stopwords: {sentence_without_stopwords}")
 
 en_stopwords.remove("on")
 en_stopwords.append("colorful")
@@ -37,7 +32,7 @@ sentence_without_stopwords_custom = ' '.join([
     and word.isalpha()
     ])
 
-log.green(f"Sentence without stopwords custom: {sentence_without_stopwords_custom}")
+Debugger.green(f"Sentence without stopwords custom: {sentence_without_stopwords_custom}")
 
 
 

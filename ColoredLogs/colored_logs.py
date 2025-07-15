@@ -4,7 +4,7 @@ import datetime
 # Initialize colorama for cross-platform support
 init()
 
-class ColoredLog:
+class Debugger:
     @staticmethod
     def info(message):
         timestamp = datetime.datetime.now().strftime("%H:%M:%S")
@@ -83,7 +83,7 @@ class ColoredLog:
 
 # Example usage
 if __name__ == "__main__":
-    log = ColoredLog()
+    log = Debugger()    
     
     # Test all colors
     log.red("This is a red message")
