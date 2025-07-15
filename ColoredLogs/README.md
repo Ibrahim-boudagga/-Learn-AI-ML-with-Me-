@@ -25,6 +25,18 @@ ColoredLogs is a professional logging utility that provides beautiful, colored c
 ## 🚀 **Quick Start**
 
 ### **Installation**
+
+#### **Option 1: Install as a Package (Recommended)**
+```bash
+# From the ColoredLogs directory
+cd ColoredLogs
+pip install -e .
+
+# Now you can import from anywhere
+from ColoredLogs import Debugger
+```
+
+#### **Option 2: Manual Installation**
 ```bash
 pip install colorama
 ```

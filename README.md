@@ -25,6 +25,7 @@ This comprehensive course takes you from **absolute beginner** to **AI/ML practi
 - [x] **Text Preprocessing** - Lowercasing techniques and best practices
 - [x] **Stopwords Removal** - NLTK integration with performance optimization
 - [x] **Regular Expressions** - Pattern matching and text manipulation
+- [x] **Text Tokenization** - Word and sentence tokenization with NLTK
 - [x] **NLP Best Practices** - When to use vs when not to use preprocessing
 - [x] **Practical Examples** - Real code implementations in both Python and Jupyter
 - [x] **Colored Logging** - Professional console output for debugging
@@ -45,18 +46,23 @@ This comprehensive course takes you from **absolute beginner** to **AI/ML practi
 AI Course/
 ├── 📁 AI bootcamp/
 │   └── 📁 1_NLP/
-│       ├── 📁 1_Lowercasing/
-│       │   ├── 📄 README.md          # Comprehensive NLP preprocessing guide
-│       │   ├── 📄 lowercasing.py     # Python script with colored logging
-│       │   └── 📄 lowercasing.ipynb  # Jupyter notebook with interactive examples
-│       ├── 📁 2_StopWords/
-│       │   ├── 📄 README.md          # Stopwords removal guide with icons
-│       │   ├── 📄 StopWords.py       # Optimized stopwords implementation
-│       │   └── 📄 Stopwords.ipynb    # Interactive stopwords tutorial
-│       └── 📁 3_Regular_Expression/
-│           ├── 📄 README.md          # Regex pattern matching guide
-│           ├── 📄 regx.py            # Regex examples with colored logging
-│           └── 📄 2.4 Regular Expressions.ipynb  # Interactive regex tutorial
+│       └── 📁 1_text_preprocessing/
+│           ├── 📁 1_Lowercasing/
+│           │   ├── 📄 README.md          # Comprehensive NLP preprocessing guide
+│           │   ├── 📄 lowercasing.py     # Python script with colored logging
+│           │   └── 📄 lowercasing.ipynb  # Jupyter notebook with interactive examples
+│           ├── 📁 2_StopWords/
+│           │   ├── 📄 README.md          # Stopwords removal guide with icons
+│           │   ├── 📄 StopWords.py       # Optimized stopwords implementation
+│           │   └── 📄 Stopwords.ipynb    # Interactive stopwords tutorial
+│           ├── 📁 3_Regular_Expression/
+│           │   ├── 📄 README.md          # Regex pattern matching guide
+│           │   ├── 📄 regx.py            # Regex examples with colored logging
+│           │   └── 📄 2.4 Regular Expressions.ipynb  # Interactive regex tutorial
+│           └── 📁 4_tokenization/
+│               ├── 📄 README.md          # Tokenization guide with NLTK
+│               ├── 📄 tokenization.py    # Tokenization examples with colored logging
+│               └── 📄 2.5 Tokenizing Text.ipynb  # Interactive tokenization tutorial
 ├── 📁 ColoredLogs/
 │   ├── 📄 __init__.py               # Package initialization
 │   ├── 📄 colored_logs.py           # Professional colored logging utility
@@ -86,13 +92,14 @@ cd -Learn-AI-ML-with-Me-
 ```
 
 ### **Start Learning**
-1. **Begin with NLP** → `AI bootcamp/1_NLP/1_Lowercasing/`
+1. **Begin with NLP** → `AI bootcamp/1_NLP/1_text_preprocessing/1_Lowercasing/`
 2. **Read the guide** → `README.md` for comprehensive explanations
 3. **Practice with code** → `lowercasing.py` for hands-on examples
 4. **Interactive learning** → `lowercasing.ipynb` for Jupyter notebook
-5. **Continue with Stopwords** → `AI bootcamp/1_NLP/2_StopWords/`
-6. **Learn Regex** → `AI bootcamp/1_NLP/3_Regular_Expression/`
-7. **Use Colored Logging** → `ColoredLogs/` for professional debugging
+5. **Continue with Stopwords** → `AI bootcamp/1_NLP/1_text_preprocessing/2_StopWords/`
+6. **Learn Regex** → `AI bootcamp/1_NLP/1_text_preprocessing/3_Regular_Expression/`
+7. **Master Tokenization** → `AI bootcamp/1_NLP/1_text_preprocessing/4_tokenization/`
+8. **Use Colored Logging** → `ColoredLogs/` for professional debugging
 
 ---
 
@@ -100,6 +107,7 @@ cd -Learn-AI-ML-with-Me-
 
 ### **NLP Fundamentals** 🗣️
 - **Text Preprocessing**: Lowercasing, stopwords removal, when to use and when not to use
+- **Text Tokenization**: Word and sentence tokenization with NLTK
 - **Best Practices**: Industry standards for NLP preprocessing
 - **Real Applications**: Practical examples for different NLP tasks
 - **Interactive Learning**: Jupyter notebooks with live examples
@@ -132,6 +140,7 @@ log.info("Stopwords removal completed!")
 
 **Key Learning Points:**
 - **Vocabulary Reduction**: Lowercasing reduces vocabulary size by 30-40%
+- **Text Tokenization**: Breaking text into meaningful units for analysis
 - **Model Performance**: Better word frequency analysis
 - **Text Standardization**: Consistent feature extraction
 - **Context Matters**: Different tasks require different approaches
@@ -142,6 +151,7 @@ log.info("Stopwords removal completed!")
 - **Basic lowercasing** - Simple string conversion with colored output
 - **List comprehension** - Processing multiple sentences efficiently
 - **Stopwords removal** - NLTK integration with performance optimization
+- **Text tokenization** - Word and sentence tokenization with NLTK
 - **Real-world scenarios** - When to use vs when not to use
 - **Best practices** - Industry standards and guidelines
 - **Performance comparison** - Efficient vs inefficient methods
