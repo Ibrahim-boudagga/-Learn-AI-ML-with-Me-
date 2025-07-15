@@ -1,9 +1,10 @@
 import sys, os
-import re
-# Add the parent directory to the Python path to find ColoredLogs
 sys.path.append(os.path.join(os.path.dirname(__file__), '../../../'))
 
 from ColoredLogs import Debugger
+
+# import re package
+import re
 
 
 Debugger.info("Regular Expression")
