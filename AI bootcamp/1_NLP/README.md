@@ -78,6 +78,12 @@
 - **Use Cases**: Information retrieval, search engines
 - **Files**: `Stemming.py`, `Stemming.ipynb`, `README.md`
 
+#### **1.6 Lemmatization** (`6_Lemmitization/`)
+- **Purpose**: Reduce words to their base form with linguistic accuracy
+- **Benefits**: Produces valid words, maintains semantic meaning
+- **Use Cases**: Semantic analysis, text classification
+- **Files**: `Lemmatization.py`, `Lemmatization.ipynb`, `README.md`
+
 ---
 
 ## 🎓 **Learning Path**
@@ -88,6 +94,7 @@
 3. **Practice Regex** → Pattern matching basics
 4. **Master Tokenization** → Break text into units
 5. **Explore Stemming** → Reduce words to roots
+6. **Master Lemmatization** → Advanced word normalization
 
 ### **🟡 Intermediate Level**
 - **Combine Techniques** → Build complete preprocessing pipelines
@@ -157,6 +164,12 @@ Debugger.yellow(f"After stopwords removal: {filtered_tokens}")
 ps = PorterStemmer()
 stemmed_tokens = [ps.stem(word) for word in filtered_tokens]
 Debugger.magenta(f"After stemming: {stemmed_tokens}")
+
+# 6. Lemmatization
+from nltk.stem import WordNetLemmatizer
+wnl = WordNetLemmatizer()
+lemmatized_tokens = [wnl.lemmatize(word) for word in stemmed_tokens]
+Debugger.cyan(f"After lemmatization: {lemmatized_tokens}")
 
 Debugger.success("NLP preprocessing completed!")
 ```
@@ -335,6 +348,7 @@ This project is licensed under the MIT License - see the [LICENSE](../LICENSE) f
 - [ ] **Regular Expressions** - Understand pattern matching
 - [ ] **Tokenization** - Break text into units
 - [ ] **Stemming** - Reduce words to roots
+- [ ] **Lemmatization** - Advanced word normalization
 - [ ] **Complete Pipeline** - Build end-to-end preprocessing
 - [ ] **Performance Optimization** - Efficient implementations
 - [ ] **Real Applications** - Apply to actual problems

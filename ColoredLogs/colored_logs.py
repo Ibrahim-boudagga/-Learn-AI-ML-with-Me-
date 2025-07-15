@@ -80,6 +80,11 @@ class Debugger:
     def custom(message, color):
         timestamp = datetime.datetime.now().strftime("%H:%M:%S")
         print(f"{color}[CUSTOM] {timestamp}: {message}{Style.RESET_ALL}")
+    
+    @staticmethod
+    def purple(message):
+        timestamp = datetime.datetime.now().strftime("%H:%M:%S")
+        print(f"{Fore.LIGHTMAGENTA_EX}[PURPLE] {timestamp}: {message}{Style.RESET_ALL}")
 
 # Example usage
 if __name__ == "__main__":
