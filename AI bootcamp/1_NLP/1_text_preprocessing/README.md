@@ -131,6 +131,13 @@ Raw Text → Cleaning → Normalization → Tokenization → Filtering → Stemm
 - **When to Use**: Accuracy-critical tasks
 - **When NOT to Use**: Speed-critical applications
 
+### **7. N-Gram Analysis** (`7 N-grams/`)
+- **Purpose**: Analyze word sequences and patterns
+- **Benefits**: Understand language patterns, improve predictions
+- **Use Cases**: Language modeling, text classification
+- **When to Use**: Pattern analysis, prediction tasks
+- **When NOT to Use**: Simple word-level tasks
+
 ---
 
 ## ❓ **Frequently Asked Questions (FAQ)**

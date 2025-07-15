@@ -84,6 +84,12 @@
 - **Use Cases**: Semantic analysis, text classification
 - **Files**: `Lemmatization.py`, `Lemmatization.ipynb`, `README.md`
 
+#### **1.7 N-Gram Analysis** (`7 N-grams/`)
+- **Purpose**: Analyze word sequences and language patterns
+- **Benefits**: Understand context, improve predictions
+- **Use Cases**: Language modeling, text classification
+- **Files**: `N-grams.py`, `README.md`
+
 ---
 
 ## 🎓 **Learning Path**
@@ -95,6 +101,7 @@
 4. **Master Tokenization** → Break text into units
 5. **Explore Stemming** → Reduce words to roots
 6. **Master Lemmatization** → Advanced word normalization
+7. **Learn N-Grams** → Word sequence analysis
 
 ### **🟡 Intermediate Level**
 - **Combine Techniques** → Build complete preprocessing pipelines
@@ -170,6 +177,13 @@ from nltk.stem import WordNetLemmatizer
 wnl = WordNetLemmatizer()
 lemmatized_tokens = [wnl.lemmatize(word) for word in stemmed_tokens]
 Debugger.cyan(f"After lemmatization: {lemmatized_tokens}")
+
+# 7. N-Gram Analysis
+from nltk import ngrams
+unigrams = list(ngrams(lemmatized_tokens, 1))
+bigrams = list(ngrams(lemmatized_tokens, 2))
+Debugger.magenta(f"Unigrams: {len(unigrams)}")
+Debugger.magenta(f"Bigrams: {len(bigrams)}")
 
 Debugger.success("NLP preprocessing completed!")
 ```
@@ -349,6 +363,7 @@ This project is licensed under the MIT License - see the [LICENSE](../LICENSE) f
 - [ ] **Tokenization** - Break text into units
 - [ ] **Stemming** - Reduce words to roots
 - [ ] **Lemmatization** - Advanced word normalization
+- [ ] **N-Gram Analysis** - Word sequence patterns
 - [ ] **Complete Pipeline** - Build end-to-end preprocessing
 - [ ] **Performance Optimization** - Efficient implementations
 - [ ] **Real Applications** - Apply to actual problems

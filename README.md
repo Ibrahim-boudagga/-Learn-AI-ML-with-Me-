@@ -28,6 +28,7 @@ This comprehensive course takes you from **absolute beginner** to **AI/ML practi
 - [x] **Text Tokenization** - Word and sentence tokenization with NLTK
 - [x] **Text Stemming** - Word root reduction with Porter and Lancaster stemmers
 - [x] **Text Lemmatization** - Advanced word normalization with WordNet
+- [x] **N-Gram Analysis** - Word sequence patterns and language modeling
 - [x] **NLP Best Practices** - When to use vs when not to use preprocessing
 - [x] **Practical Examples** - Real code implementations in both Python and Jupyter
 - [x] **Colored Logging** - Professional console output for debugging
@@ -69,10 +70,13 @@ AI Course/
 │           │   ├── 📄 README.md          # Stemming guide with Porter and Lancaster
 │           │   ├── 📄 Stemming.py        # Stemming examples with colored logging
 │           │   └── 📄 Stemming.ipynb     # Interactive stemming tutorial
-│           └── 📁 6_Lemmitization/
-│               ├── 📄 README.md          # Lemmatization guide with WordNet
-│               ├── 📄 Lemmatization.py   # Lemmatization examples with colored logging
-│               └── 📄 Lemmatization.ipynb # Interactive lemmatization tutorial
+│           ├── 📁 6_Lemmitization/
+│           │   ├── 📄 README.md          # Lemmatization guide with WordNet
+│           │   ├── 📄 Lemmatization.py   # Lemmatization examples with colored logging
+│           │   └── 📄 Lemmatization.ipynb # Interactive lemmatization tutorial
+│           └── 📁 7 N-grams/
+│               ├── 📄 README.md          # N-gram analysis guide
+│               └── 📄 N-grams.py         # N-gram examples with visualization
 ├── 📁 ColoredLogs/
 │   ├── 📄 __init__.py               # Package initialization
 │   ├── 📄 colored_logs.py           # Professional colored logging utility
@@ -112,7 +116,8 @@ cd -Learn-AI-ML-with-Me-
 8. **Master Tokenization** → `AI bootcamp/1_NLP/1_text_preprocessing/4_tokenization/`
 9. **Learn Stemming** → `AI bootcamp/1_NLP/1_text_preprocessing/5_Stemming/`
 10. **Master Lemmatization** → `AI bootcamp/1_NLP/1_text_preprocessing/6_Lemmitization/`
-11. **Use Colored Logging** → `ColoredLogs/` for professional debugging
+11. **Learn N-Grams** → `AI bootcamp/1_NLP/1_text_preprocessing/7 N-grams/`
+12. **Use Colored Logging** → `ColoredLogs/` for professional debugging
 
 ---
 
@@ -123,6 +128,7 @@ cd -Learn-AI-ML-with-Me-
 - **Text Tokenization**: Word and sentence tokenization with NLTK
 - **Text Stemming**: Word root reduction with Porter and Lancaster stemmers
 - **Text Lemmatization**: Advanced word normalization with WordNet
+- **N-Gram Analysis**: Word sequence patterns and language modeling
 - **Best Practices**: Industry standards for NLP preprocessing
 - **Real Applications**: Practical examples for different NLP tasks
 - **Interactive Learning**: Jupyter notebooks with live examples
@@ -161,6 +167,7 @@ Debugger.info("NLP preprocessing completed!")
 - **Text Tokenization**: Breaking text into meaningful units for analysis
 - **Text Stemming**: Reducing words to root forms for better matching
 - **Text Lemmatization**: Advanced word normalization for semantic accuracy
+- **N-Gram Analysis**: Understanding word sequences and patterns
 - **Model Performance**: Better word frequency analysis
 - **Text Standardization**: Consistent feature extraction
 - **Context Matters**: Different tasks require different approaches
@@ -174,6 +181,7 @@ Debugger.info("NLP preprocessing completed!")
 - **Text tokenization** - Word and sentence tokenization with NLTK
 - **Text stemming** - Word root reduction with Porter and Lancaster stemmers
 - **Text lemmatization** - Advanced word normalization with WordNet
+- **N-gram analysis** - Word sequence patterns and language modeling
 - **Real-world scenarios** - When to use vs when not to use
 - **Best practices** - Industry standards and guidelines
 - **Performance comparison** - Efficient vs inefficient methods
