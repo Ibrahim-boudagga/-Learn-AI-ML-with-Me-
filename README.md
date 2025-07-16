@@ -29,6 +29,7 @@ This comprehensive course takes you from **absolute beginner** to **AI/ML practi
 - [x] **Text Stemming** - Word root reduction with Porter and Lancaster stemmers
 - [x] **Text Lemmatization** - Advanced word normalization with WordNet
 - [x] **N-Gram Analysis** - Word sequence patterns and language modeling
+- [x] **Practical Exercises** - Real-world hotel reviews analysis with complete NLP pipeline
 - [x] **NLP Best Practices** - When to use vs when not to use preprocessing
 - [x] **Practical Examples** - Real code implementations in both Python and Jupyter
 - [x] **Colored Logging** - Professional console output for debugging
@@ -76,7 +77,13 @@ AI Course/
 │           │   └── 📄 Lemmatization.ipynb # Interactive lemmatization tutorial
 │           └── 📁 7 N-grams/
 │               ├── 📄 README.md          # N-gram analysis guide
-│               └── 📄 N-grams.py         # N-gram examples with visualization
+│               ├── 📄 N-grams.py         # N-gram examples with visualization
+│               └── 📄 N-grams.ipynb      # Interactive N-gram tutorial
+│           └── 📁 9_practical_exercice/
+│               ├── 📄 README.md          # Practical NLP exercise guide
+│               ├── 📄 hotel_reviews.py   # Complete NLP pipeline implementation
+│               ├── 📄 hotel_reviews.ipynb # Interactive hotel reviews analysis
+│               └── 📄 tripadvisor_hotel_reviews.csv # Real hotel reviews dataset
 ├── 📁 ColoredLogs/
 │   ├── 📄 __init__.py               # Package initialization
 │   ├── 📄 colored_logs.py           # Professional colored logging utility
@@ -117,7 +124,8 @@ cd -Learn-AI-ML-with-Me-
 9. **Learn Stemming** → `AI bootcamp/1_NLP/1_text_preprocessing/5_Stemming/`
 10. **Master Lemmatization** → `AI bootcamp/1_NLP/1_text_preprocessing/6_Lemmitization/`
 11. **Learn N-Grams** → `AI bootcamp/1_NLP/1_text_preprocessing/7 N-grams/`
-12. **Use Colored Logging** → `ColoredLogs/` for professional debugging
+12. **Practice Real Projects** → `AI bootcamp/1_NLP/1_text_preprocessing/9_practical_exercice/` - Hotel reviews analysis
+13. **Use Colored Logging** → `ColoredLogs/` for professional debugging
 
 ---
 
