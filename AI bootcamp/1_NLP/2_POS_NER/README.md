@@ -9,9 +9,9 @@ This folder contains implementations and examples of Part-of-Speech tagging and 
 - **pos.ipynb**: Jupyter notebook with POS tagging examples
 - **README.md**: Detailed documentation for POS tagging
 
-### **ner/** - Named Entity Recognition (Coming Soon)
-- **ner.py**: Implementation of Named Entity Recognition
-- **ner.ipynb**: Jupyter notebook with NER examples
+### **ner/** - Named Entity Recognition
+- **ner.py**: Implementation of Named Entity Recognition with visualization
+- **NER.ipynb**: Jupyter notebook with NER examples and interactive tutorials
 - **README.md**: Detailed documentation for NER
 
 ## 🎯 What You'll Learn
@@ -40,17 +40,19 @@ This folder contains implementations and examples of Part-of-Speech tagging and 
 1. **Navigate to the specific subfolder**:
    ```bash
    cd pos/  # For POS tagging
-   # cd ner/  # For NER (when available)
+   cd ner/  # For NER
    ```
 
 2. **Run the Python script**:
    ```bash
-   python pos.py
+   python pos.py  # For POS tagging
+   python ner.py  # For NER
    ```
 
 3. **Or open the Jupyter notebook**:
    ```bash
-   jupyter notebook pos.ipynb
+   jupyter notebook pos.ipynb  # For POS tagging
+   jupyter notebook NER.ipynb  # For NER
    ```
 
 ## 📚 Learning Path
@@ -67,4 +69,4 @@ This folder contains implementations and examples of Part-of-Speech tagging and 
 
 ---
 
-**Next Steps**: Explore the `pos/` folder to start learning Part-of-Speech tagging! 
+**Next Steps**: Explore the `pos/` folder for POS tagging or the `ner/` folder for Named Entity Recognition! 

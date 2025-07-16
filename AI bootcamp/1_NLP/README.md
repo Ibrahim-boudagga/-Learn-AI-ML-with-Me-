@@ -99,11 +99,11 @@
 - **Use Cases**: Text analysis, information extraction
 - **Files**: `pos.py`, `pos.ipynb`, `README.md`
 
-#### **2.2 Named Entity Recognition (NER)** (`ner/` - Coming Soon)
+#### **2.2 Named Entity Recognition (NER)** (`ner/`)
 - **Purpose**: Identify and classify named entities
 - **Benefits**: Extract key information from text
 - **Use Cases**: Information extraction, question answering
-- **Files**: `ner.py`, `ner.ipynb`, `README.md`
+- **Files**: `ner.py`, `NER.ipynb`, `README.md`
 
 ---
 

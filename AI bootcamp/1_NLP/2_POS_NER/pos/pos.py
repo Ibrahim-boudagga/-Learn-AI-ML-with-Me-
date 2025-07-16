@@ -1,6 +1,6 @@
 import spacy, sys, os
 
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../../../.")))
+sys.path.append(os.path.join(os.path.dirname(__file__), "../../../../"))
 from ColoredLogs import Debugger
 import pandas as pd
 
