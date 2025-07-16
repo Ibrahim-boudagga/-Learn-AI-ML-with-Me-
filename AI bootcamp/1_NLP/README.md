@@ -90,6 +90,21 @@
 - **Use Cases**: Language modeling, text classification
 - **Files**: `N-grams.py`, `README.md`
 
+### **📁 2. Part-of-Speech Tagging & Named Entity Recognition** 🏷️
+**Location**: `2_POS_NER/`
+
+#### **2.1 Part-of-Speech (POS) Tagging** (`pos/`)
+- **Purpose**: Assign grammatical categories to words
+- **Benefits**: Understand sentence structure and syntax
+- **Use Cases**: Text analysis, information extraction
+- **Files**: `pos.py`, `pos.ipynb`, `README.md`
+
+#### **2.2 Named Entity Recognition (NER)** (`ner/` - Coming Soon)
+- **Purpose**: Identify and classify named entities
+- **Benefits**: Extract key information from text
+- **Use Cases**: Information extraction, question answering
+- **Files**: `ner.py`, `ner.ipynb`, `README.md`
+
 ---
 
 ## 🎓 **Learning Path**
@@ -102,6 +117,8 @@
 5. **Explore Stemming** → Reduce words to roots
 6. **Master Lemmatization** → Advanced word normalization
 7. **Learn N-Grams** → Word sequence analysis
+8. **Study POS Tagging** → Understand sentence structure
+9. **Explore NER** → Extract named entities
 
 ### **🟡 Intermediate Level**
 - **Combine Techniques** → Build complete preprocessing pipelines
