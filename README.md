@@ -32,6 +32,7 @@ This comprehensive course takes you from **absolute beginner** to **AI/ML practi
 - [x] **Practical Exercises** - Real-world hotel reviews analysis with complete NLP pipeline
 - [x] **Part-of-Speech Tagging** - Grammatical analysis using spaCy
 - [x] **Named Entity Recognition** - Entity extraction and classification
+- [x] **Practical Application** - BBC news analysis with complete NLP pipeline
 - [x] **NLP Best Practices** - When to use vs when not to use preprocessing
 - [x] **Practical Examples** - Real code implementations in both Python and Jupyter
 - [x] **Colored Logging** - Professional console output for debugging
@@ -92,10 +93,14 @@ AI Course/
 │           │   ├── 📄 README.md          # POS tagging detailed guide
 │           │   ├── 📄 pos.py             # POS tagging implementation with spaCy
 │           │   └── 📄 pos.ipynb          # Interactive POS tagging tutorial
-│           └── 📁 ner/
-│               ├── 📄 README.md          # NER detailed guide
-│               ├── 📄 ner.py             # NER implementation with visualization
-│               └── 📄 NER.ipynb          # Interactive NER tutorial
+│           ├── 📁 ner/
+│           │   ├── 📄 README.md          # NER detailed guide
+│           │   ├── 📄 ner.py             # NER implementation with visualization
+│           │   └── 📄 NER.ipynb          # Interactive NER tutorial
+│           └── 📁 practical task/
+│               ├── 📄 README.md          # BBC news analysis guide
+│               ├── 📄 bbc_news.ipynb     # Complete NLP pipeline analysis
+│               └── 📄 bbc_news.csv       # 1,001 BBC news articles dataset
 ├── 📁 ColoredLogs/
 │   ├── 📄 __init__.py               # Package initialization
 │   ├── 📄 colored_logs.py           # Professional colored logging utility
@@ -140,7 +145,8 @@ cd -Learn-AI-ML-with-Me-
 12. **Practice Real Projects** → `AI bootcamp/1_NLP/1_text_preprocessing/9_practical_exercice/` - Hotel reviews analysis
 13. **Study POS Tagging** → `AI bootcamp/1_NLP/2_POS_NER/pos/` - Part-of-Speech analysis
 14. **Explore NER** → `AI bootcamp/1_NLP/2_POS_NER/ner/` - Named Entity Recognition with visualization
-15. **Use Colored Logging** → `ColoredLogs/` for professional debugging
+15. **Complete Practical Task** → `AI bootcamp/1_NLP/2_POS_NER/practical task/` - BBC news analysis with complete NLP pipeline
+16. **Use Colored Logging** → `ColoredLogs/` for professional debugging
 
 ---
 
@@ -154,6 +160,7 @@ cd -Learn-AI-ML-with-Me-
 - **N-Gram Analysis**: Word sequence patterns and language modeling
 - **Part-of-Speech Tagging**: Grammatical analysis using spaCy
 - **Named Entity Recognition**: Entity extraction and classification
+- **Practical Application**: BBC news analysis with complete NLP pipeline
 - **Best Practices**: Industry standards for NLP preprocessing
 - **Real Applications**: Practical examples for different NLP tasks
 - **Interactive Learning**: Jupyter notebooks with live examples
@@ -207,6 +214,7 @@ Debugger.cyan(pos_df.head())
 - **N-gram analysis** - Word sequence patterns and language modeling
 - **POS tagging** - Grammatical analysis using spaCy
 - **Named entity recognition** - Entity extraction and classification
+- **BBC news analysis** - Complete NLP pipeline with real-world data
 - **Real-world scenarios** - When to use vs when not to use
 - **Best practices** - Industry standards and guidelines
 - **Performance comparison** - Efficient vs inefficient methods
@@ -280,7 +288,7 @@ We welcome contributions! Here's how you can help:
 1. **Text Preprocessing** → Lowercasing, stopwords, regex, tokenization
 2. **Text Analysis** → Stemming, lemmatization, N-grams
 3. **Advanced NLP** → POS tagging, Named Entity Recognition
-4. **Real Projects** → Hotel reviews analysis, Google entity extraction
+4. **Real Projects** → Hotel reviews analysis, BBC news analysis
 5. **Visualization** → Interactive HTML visualizations with browser integration
 
 ### **Phase 2: Machine Learning** 🚧

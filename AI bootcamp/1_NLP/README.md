@@ -105,6 +105,12 @@
 - **Use Cases**: Information extraction, question answering
 - **Files**: `ner.py`, `NER.ipynb`, `README.md`
 
+#### **2.3 Practical Application** (`practical task/`)
+- **Purpose**: Apply complete NLP pipeline to real-world data
+- **Benefits**: Combine all techniques in a comprehensive analysis
+- **Use Cases**: News analysis, content understanding, pattern recognition
+- **Files**: `bbc_news.ipynb`, `bbc_news.csv`, `README.md`
+
 ---
 
 ## 🎓 **Learning Path**
@@ -119,9 +125,11 @@
 7. **Learn N-Grams** → Word sequence analysis
 8. **Study POS Tagging** → Understand sentence structure
 9. **Explore NER** → Extract named entities
+10. **Complete Practical Task** → Apply full pipeline to real data
 
 ### **🟡 Intermediate Level**
 - **Combine Techniques** → Build complete preprocessing pipelines
+- **Apply to Real Data** → Work with actual datasets (BBC news analysis)
 - **Optimize Performance** → Use efficient algorithms
 - **Handle Edge Cases** → Deal with real-world text
 - **Evaluate Quality** → Measure preprocessing effectiveness
@@ -202,7 +210,14 @@ bigrams = list(ngrams(lemmatized_tokens, 2))
 Debugger.magenta(f"Unigrams: {len(unigrams)}")
 Debugger.magenta(f"Bigrams: {len(bigrams)}")
 
-Debugger.success("NLP preprocessing completed!")
+# 8. POS Tagging & NER (Advanced)
+import spacy
+nlp = spacy.load("en_core_web_sm")
+doc = nlp(" ".join(lemmatized_tokens))
+Debugger.cyan(f"POS Tags: {[(token.text, token.pos_) for token in doc[:5]]}")
+Debugger.cyan(f"Named Entities: {[(ent.text, ent.label_) for ent in doc.ents[:3]]}")
+
+Debugger.success("Complete NLP pipeline completed!")
 ```
 
 ---
@@ -265,6 +280,7 @@ Debugger.success("NLP preprocessing completed!")
 - **Dependency Parsing** - Syntactic structure
 - **Semantic Similarity** - Meaning comparison
 - **Text Generation** - Create human-like text
+- **Real-World Analysis** - BBC news content analysis
 
 ### **🌍 Multilingual NLP**
 - **Cross-lingual Models** - Multiple languages
@@ -294,7 +310,8 @@ python -c "import nltk; nltk.download('punkt'); nltk.download('stopwords')"
 3. **Practice with code** → Python scripts with colored logging
 4. **Interactive learning** → Jupyter notebooks
 5. **Build pipelines** → Combine multiple techniques
-6. **Apply to real data** → Use your own datasets
+6. **Complete practical task** → `2_POS_NER/practical task/` (BBC news analysis)
+7. **Apply to real data** → Use your own datasets
 
 ---
 
@@ -381,7 +398,10 @@ This project is licensed under the MIT License - see the [LICENSE](../LICENSE) f
 - [ ] **Stemming** - Reduce words to roots
 - [ ] **Lemmatization** - Advanced word normalization
 - [ ] **N-Gram Analysis** - Word sequence patterns
+- [ ] **POS Tagging** - Grammatical analysis
+- [ ] **Named Entity Recognition** - Entity extraction
 - [ ] **Complete Pipeline** - Build end-to-end preprocessing
+- [ ] **Practical Application** - BBC news analysis
 - [ ] **Performance Optimization** - Efficient implementations
 - [ ] **Real Applications** - Apply to actual problems
 
