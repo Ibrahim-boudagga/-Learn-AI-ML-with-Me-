@@ -210,5 +210,68 @@ email = "user@example.com"
 is_valid = "@" in email and "." in email
 ```
 
+## Course Structure
+
+This Strings section is organized into individual practice files for focused learning:
+
+### **Practice Files:**
+
+1. **`01_string_creation.py`** - String creation and basic operations
+   - Creating strings and basic indexing
+   - String length and slicing
+
+2. **`02_case_conversion.py`** - String case conversion
+   - upper(), lower(), title(), capitalize()
+   - Case manipulation methods
+
+3. **`03_search_replace.py`** - String search and replace
+   - find(), count(), replace() methods
+   - String searching and substitution
+
+4. **`04_split_join.py`** - String splitting and joining
+   - split(), join() methods
+   - Working with string lists
+
+5. **`05_string_formatting.py`** - String formatting
+   - f-strings, .format() method
+   - Different formatting techniques
+
+6. **`06_string_validation.py`** - String validation
+   - isalpha(), isdigit(), startswith()
+   - String validation methods
+
+7. **`07_string_manipulation.py`** - String manipulation
+   - strip(), center(), justify methods
+   - String cleaning and formatting
+
+8. **`08_practice_problems.py`** - Practice problems
+   - 5 practical exercises
+   - Real-world string processing
+
+### **How to Use This Course:**
+
+1. **Start with the README** - Read through the theory and concepts
+2. **Run each file individually** - Execute `python filename.py` to see examples
+3. **Experiment with code** - Modify strings and try different methods
+4. **Complete practice problems** - Work through the exercises in `08_practice_problems.py`
+5. **Move to next section** - Progress to Lists section
+
+### **Running the Examples:**
+
+```bash
+# Run individual files
+python 01_string_creation.py
+python 02_case_conversion.py
+python 03_search_replace.py
+# ... and so on
+
+# Or run all files in sequence
+for file in *.py; do
+    echo "=== Running $file ==="
+    python "$file"
+    echo
+done
+```
+
 ## Practice Examples
-See `practice.py` for hands-on exercises with strings! 
+Each file contains hands-on exercises and examples. Start with `01_string_creation.py` and work your way through! 
