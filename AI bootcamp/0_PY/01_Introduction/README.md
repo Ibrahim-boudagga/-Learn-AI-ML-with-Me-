@@ -265,5 +265,81 @@ except ZeroDivisionError:
 - [Real Python](https://realpython.com/)
 - [Python.org](https://www.python.org/)
 
+## Course Structure
+
+This introduction section is organized into individual practice files for focused learning:
+
+### **Practice Files:**
+
+1. **`01_first_program.py`** - Your first Python program
+   - Basic print statements
+   - Understanding program structure
+
+2. **`02_variables_data_types.py`** - Variables and data types
+   - String, integer, float, boolean types
+   - Variable assignment and type checking
+
+3. **`03_mathematical_operations.py`** - Mathematical operations
+   - Addition, subtraction, multiplication, division
+   - Floor division, modulo, exponentiation
+
+4. **`04_string_operations.py`** - String operations
+   - String concatenation and formatting
+   - String methods (upper, lower, title)
+   - String length and manipulation
+
+5. **`05_type_conversion.py`** - Type conversion
+   - Converting between data types
+   - int(), float(), str() functions
+
+6. **`06_input_output.py`** - Input and output
+   - Getting user input with input()
+   - Output formatting with print()
+
+7. **`07_control_flow.py`** - Control flow
+   - If, elif, else statements
+   - Conditional logic and decision making
+
+8. **`08_loops.py`** - Loops
+   - For loops with range() and lists
+   - While loops and iteration
+
+9. **`09_functions.py`** - Functions
+   - Function definition and calling
+   - Parameters and return values
+
+10. **`10_built_in_functions.py`** - Built-in functions
+    - len(), sum(), max(), min()
+    - String methods and utilities
+
+11. **`11_practice_problems.py`** - Practice problems
+    - 10 practical exercises
+    - Real-world problem solving
+
+### **How to Use This Course:**
+
+1. **Start with the README** - Read through the theory and concepts
+2. **Run each file individually** - Execute `python filename.py` to see examples
+3. **Experiment with code** - Modify variables and try different values
+4. **Complete practice problems** - Work through the exercises in `11_practice_problems.py`
+5. **Move to next section** - Progress to Variables and Data Types section
+
+### **Running the Examples:**
+
+```bash
+# Run individual files
+python 01_first_program.py
+python 02_variables_data_types.py
+python 03_mathematical_operations.py
+# ... and so on
+
+# Or run all files in sequence
+for file in *.py; do
+    echo "=== Running $file ==="
+    python "$file"
+    echo
+done
+```
+
 ## Practice Examples
-See `practice.py` for hands-on exercises! 
+Each file contains hands-on exercises and examples. Start with `01_first_program.py` and work your way through! 
