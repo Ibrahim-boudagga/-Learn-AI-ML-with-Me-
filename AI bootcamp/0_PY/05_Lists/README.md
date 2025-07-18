@@ -262,5 +262,51 @@ names = [name for name, age in data]
 ages = [age for name, age in data]
 ```
 
+## Course Structure
+
+This section is organized into multiple focused files for better learning:
+
+### Basic Concepts
+- **`01_list_creation_basic_operations.py`** - Creating lists and basic operations
+- **`02_list_slicing.py`** - List slicing techniques
+- **`03_list_methods_adding.py`** - Methods to add elements to lists
+- **`04_list_methods_removing.py`** - Methods to remove elements from lists
+- **`05_list_methods_finding.py`** - Methods to find and count elements
+
+### Advanced Operations
+- **`06_list_methods_sorting_reversing.py`** - Sorting and reversing lists
+- **`07_list_comprehension.py`** - List comprehension techniques
+- **`08_builtin_functions_lists.py`** - Built-in functions used with lists
+- **`09_list_operations.py`** - List operations (concatenation, repetition, comparison)
+
+### Practice Problems
+- **`10_practice_problems_1.py`** - Basic practice problems (finding second largest, removing duplicates, etc.)
+- **`11_practice_problems_2.py`** - Advanced practice problems (flattening, rotation, algorithms)
+
+## How to Use This Section
+
+1. **Start with the basics**: Begin with `01_list_creation_basic_operations.py` to understand list fundamentals
+2. **Learn slicing**: Move to `02_list_slicing.py` for powerful list slicing techniques
+3. **Master methods**: Study the methods files (`03_`, `04_`, `05_`, `06_`) to understand list manipulation
+4. **Explore advanced concepts**: Practice with `07_list_comprehension.py` and `08_builtin_functions_lists.py`
+5. **Understand operations**: Learn about list operations in `09_list_operations.py`
+6. **Practice problems**: Challenge yourself with the practice problem files
+
+## Running the Files
+
+Each file can be run independently:
+
+```bash
+# Run basic operations
+python 01_list_creation_basic_operations.py
+
+# Run slicing examples
+python 02_list_slicing.py
+
+# Run practice problems
+python 10_practice_problems_1.py
+python 11_practice_problems_2.py
+```
+
 ## Practice Examples
-See `practice.py` for hands-on exercises with lists! 
+Each file contains hands-on exercises and examples to reinforce your understanding of Python lists! 
