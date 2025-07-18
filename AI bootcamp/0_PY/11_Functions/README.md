@@ -3,282 +3,160 @@
 ## Overview
 Functions in Python are reusable blocks of code that perform specific tasks. They help organize code, reduce duplication, and make programs more modular.
 
-## Function Definition
+## Course Structure
 
-### Basic Function
+This course is organized into focused modules for better learning:
+
+### Core Concepts
+- **01_basic_function_definition.py** - Basic function syntax and definition
+- **02_function_parameters.py** - Understanding different parameter types
+- **03_return_values.py** - Function return values and types
+- **04_arbitrary_arguments.py** - Using *args and **kwargs
+- **05_variable_scope.py** - Understanding variable scope and LEGB rule
+- **06_lambda_functions.py** - Anonymous functions and lambda expressions
+- **07_recursion.py** - Recursive function patterns and algorithms
+- **08_higher_order_functions.py** - Functions as parameters and return values
+- **09_builtin_functions_with_functions.py** - map(), filter(), reduce(), etc.
+
+### Practice Problems
+- **10_practice_problems_1.py** - Basic to intermediate function problems (Problems 1-5)
+- **11_practice_problems_2.py** - Advanced function problems (Problems 6-10)
+
+## How to Use This Course
+
+### For Beginners
+1. Start with `01_basic_function_definition.py` to understand function syntax
+2. Progress through each file in numerical order
+3. Run each file to see the output and understand the concepts
+4. Practice with the problems in the practice files
+
+### For Intermediate Learners
+1. Review concepts you're less familiar with
+2. Focus on the practice problems to strengthen your skills
+3. Experiment with modifying the examples
+
+### Running the Examples
+```bash
+# Run a specific concept file
+python 01_basic_function_definition.py
+
+# Run practice problems
+python 10_practice_problems_1.py
+python 11_practice_problems_2.py
+```
+
+## Key Concepts Covered
+
+### Basic Function Definition
 ```python
+# Simple function with no parameters
 def greet():
     print("Hello, World!")
 
-# Calling the function
-greet()
-```
-
-### Function with Parameters
-```python
-def greet(name):
+# Function with parameters
+def greet_with_name(name):
     print(f"Hello, {name}!")
 
-# Calling with argument
-greet("Alice")
-```
-
-### Function with Multiple Parameters
-```python
+# Function with parameters and return value
 def add_numbers(a, b):
     return a + b
-
-# Calling with multiple arguments
-result = add_numbers(5, 3)
-print(result)  # 8
 ```
 
-### Function with Default Parameters
+### Function Parameters
 ```python
-def greet(name, greeting="Hello"):
-    print(f"{greeting}, {name}!")
+# Function with default parameters
+def describe_person(name, age, city="Unknown"):
+    print(f"{name} is {age} years old from {city}")
 
-# Using default parameter
-greet("Alice")  # Hello, Alice!
+# Function with keyword-only parameters
+def calculate_rectangle_area(*, length, width):
+    return length * width
 
-# Overriding default parameter
-greet("Bob", "Good morning")  # Good morning, Bob!
+# Function with positional-only parameters
+def calculate_circle_area(radius, /):
+    import math
+    return math.pi * radius**2
 ```
 
-## Return Values
-
-### Basic Return
+### Return Values
 ```python
+# Function returning single value
 def square(x):
-    return x ** 2
+    return x**2
 
-result = square(5)
-print(result)  # 25
-```
-
-### Multiple Return Values
-```python
+# Function returning multiple values
 def get_min_max(numbers):
     if not numbers:
         return None, None
-    
-    min_val = min(numbers)
-    max_val = max(numbers)
-    return min_val, max_val
+    return min(numbers), max(numbers)
 
-min_num, max_num = get_min_max([1, 2, 3, 4, 5])
-print(f"Min: {min_num}, Max: {max_num}")
-```
-
-### Early Return
-```python
+# Function returning different types
 def check_age(age):
     if age < 0:
         return "Invalid age"
-    
-    if age < 18:
+    elif age < 18:
         return "Minor"
-    
-    if age < 65:
+    else:
         return "Adult"
-    
-    return "Senior"
-
-print(check_age(25))  # Adult
-print(check_age(-5))  # Invalid age
 ```
 
-## Parameter Types
-
-### Positional Arguments
+### Arbitrary Arguments
 ```python
-def describe_person(name, age, city):
-    print(f"{name} is {age} years old from {city}")
-
-describe_person("Alice", 25, "New York")
-```
-
-### Keyword Arguments
-```python
-def describe_person(name, age, city):
-    print(f"{name} is {age} years old from {city}")
-
-# Using keyword arguments
-describe_person(name="Alice", age=25, city="New York")
-describe_person(age=25, name="Alice", city="New York")
-```
-
-### Arbitrary Arguments (*args)
-```python
-def sum_numbers(*args):
+# Function with *args
+def sum_all(*args):
     return sum(args)
 
-print(sum_numbers(1, 2, 3, 4, 5))  # 15
-print(sum_numbers(10, 20))         # 30
-
-def print_info(*args):
-    for arg in args:
-        print(arg)
-
-print_info("Alice", 25, "Engineer", "New York")
-```
-
-### Arbitrary Keyword Arguments (**kwargs)
-```python
-def print_person_info(**kwargs):
+# Function with **kwargs
+def person_info(**kwargs):
     for key, value in kwargs.items():
         print(f"{key}: {value}")
 
-print_person_info(name="Alice", age=25, job="Engineer", city="New York")
+# Function with both *args and **kwargs
+def flexible_function(*args, **kwargs):
+    print("Positional arguments:", args)
+    print("Keyword arguments:", kwargs)
 ```
 
-### Combining Different Parameter Types
+### Variable Scope
 ```python
-def complex_function(name, age, *args, city="Unknown", **kwargs):
-    print(f"Name: {name}")
-    print(f"Age: {age}")
-    print(f"City: {city}")
-    print(f"Additional args: {args}")
-    print(f"Additional kwargs: {kwargs}")
-
-complex_function("Alice", 25, "Engineer", "Python", city="New York", hobby="reading")
-```
-
-## Variable Scope
-
-### Local Variables
-```python
-def my_function():
-    local_var = "I'm local"
-    print(local_var)
-
-my_function()
-# print(local_var)  # Error - local_var is not accessible outside function
-```
-
-### Global Variables
-```python
+# Global variable
 global_var = "I'm global"
 
-def my_function():
-    print(global_var)  # Can access global variable
+def test_scope():
+    local_var = "I'm local"
+    print(f"Local: {local_var}")
+    print(f"Global: {global_var}")
 
 def modify_global():
     global global_var
     global_var = "Modified global"
-
-my_function()
-modify_global()
-print(global_var)
 ```
 
-### Nonlocal Variables
+### Lambda Functions
 ```python
-def outer_function():
-    outer_var = "I'm outer"
-    
-    def inner_function():
-        nonlocal outer_var
-        outer_var = "Modified outer"
-    
-    inner_function()
-    print(outer_var)
+# Basic lambda
+square_lambda = lambda x: x**2
+add_lambda = lambda x, y: x + y
 
-outer_function()
-```
-
-## Lambda Functions
-
-### Basic Lambda
-```python
-# Regular function
-def square(x):
-    return x ** 2
-
-# Lambda function
-square_lambda = lambda x: x ** 2
-
-print(square(5))        # 25
-print(square_lambda(5)) # 25
-```
-
-### Lambda with Multiple Parameters
-```python
-add = lambda x, y: x + y
-multiply = lambda x, y: x * y
-
-print(add(3, 5))      # 8
-print(multiply(3, 5)) # 15
-```
-
-### Lambda with Conditional Logic
-```python
+# Lambda with conditional logic
 is_even = lambda x: x % 2 == 0
 get_sign = lambda x: "positive" if x > 0 else "negative" if x < 0 else "zero"
 
-print(is_even(4))      # True
-print(get_sign(5))     # positive
-print(get_sign(-3))    # negative
-print(get_sign(0))     # zero
+# Lambda with built-in functions
+numbers = [1, 2, 3, 4, 5]
+squared = list(map(lambda x: x**2, numbers))
+evens = list(filter(lambda x: x % 2 == 0, numbers))
 ```
 
-## Function Decorators
-
-### Basic Decorator
+### Recursion
 ```python
-def timer(func):
-    import time
-    
-    def wrapper(*args, **kwargs):
-        start = time.time()
-        result = func(*args, **kwargs)
-        end = time.time()
-        print(f"{func.__name__} took {end - start:.4f} seconds")
-        return result
-    
-    return wrapper
-
-@timer
-def slow_function():
-    import time
-    time.sleep(1)
-    return "Done"
-
-slow_function()
-```
-
-### Decorator with Parameters
-```python
-def repeat(times):
-    def decorator(func):
-        def wrapper(*args, **kwargs):
-            for _ in range(times):
-                result = func(*args, **kwargs)
-            return result
-        return wrapper
-    return decorator
-
-@repeat(3)
-def greet(name):
-    print(f"Hello, {name}!")
-
-greet("Alice")
-```
-
-## Recursion
-
-### Basic Recursion
-```python
+# Basic factorial function
 def factorial(n):
     if n <= 1:
         return 1
     return n * factorial(n - 1)
 
-print(factorial(5))  # 120
-```
-
-### Recursion with Base Cases
-```python
+# Fibonacci sequence
 def fibonacci(n):
     if n <= 0:
         return 0
@@ -287,111 +165,79 @@ def fibonacci(n):
     else:
         return fibonacci(n - 1) + fibonacci(n - 2)
 
-print(fibonacci(10))  # 55
+# Binary search recursively
+def binary_search(arr, target, left=0, right=None):
+    if right is None:
+        right = len(arr) - 1
+    
+    if left > right:
+        return -1
+    
+    mid = (left + right) // 2
+    
+    if arr[mid] == target:
+        return mid
+    elif arr[mid] > target:
+        return binary_search(arr, target, left, mid - 1)
+    else:
+        return binary_search(arr, target, mid + 1, right)
 ```
 
-## Higher-Order Functions
-
-### Functions as Parameters
+### Higher-Order Functions
 ```python
+# Function that takes another function as parameter
 def apply_operation(func, numbers):
     return [func(num) for num in numbers]
 
-def square(x):
-    return x ** 2
-
-def double(x):
-    return x * 2
-
-numbers = [1, 2, 3, 4, 5]
-squared = apply_operation(square, numbers)
-doubled = apply_operation(double, numbers)
-
-print(squared)  # [1, 4, 9, 16, 25]
-print(doubled)  # [2, 4, 6, 8, 10]
-```
-
-### Functions Returning Functions
-```python
+# Function that returns a function
 def create_multiplier(factor):
     def multiplier(x):
         return x * factor
     return multiplier
 
-double = create_multiplier(2)
-triple = create_multiplier(3)
-
-print(double(5))  # 10
-print(triple(5))  # 15
+# Function composition
+def compose(*functions):
+    def composed(x):
+        result = x
+        for func in reversed(functions):
+            result = func(result)
+        return result
+    return composed
 ```
 
-## Built-in Functions with Functions
-
-### map()
+### Built-in Functions with Functions
 ```python
+# map() function
 numbers = [1, 2, 3, 4, 5]
 squared = list(map(lambda x: x**2, numbers))
-print(squared)  # [1, 4, 9, 16, 25]
-```
 
-### filter()
-```python
-numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+# filter() function
 evens = list(filter(lambda x: x % 2 == 0, numbers))
-print(evens)  # [2, 4, 6, 8, 10]
-```
 
-### reduce()
-```python
+# reduce() function
 from functools import reduce
-
-numbers = [1, 2, 3, 4, 5]
 sum_all = reduce(lambda x, y: x + y, numbers)
-print(sum_all)  # 15
+
+# sorted() with key function
+words = ["banana", "apple", "cherry"]
+sorted_by_length = sorted(words, key=lambda x: len(x))
 ```
 
-## Common Function Patterns
+## Practice Problems Included
 
-### Function with Type Hints
-```python
-def calculate_area(length: float, width: float) -> float:
-    return length * width
+### Part 1 (Basic to Intermediate)
+1. Calculate area of different shapes
+2. Check if number is prime
+3. Find GCD using Euclidean algorithm
+4. Convert decimal to binary
+5. Check if string is palindrome
 
-def process_data(data: list) -> dict:
-    return {"count": len(data), "sum": sum(data)}
-```
-
-### Function with Documentation
-```python
-def calculate_interest(principal: float, rate: float, time: float) -> float:
-    """
-    Calculate simple interest.
-    
-    Args:
-        principal (float): The principal amount
-        rate (float): The interest rate (as decimal)
-        time (float): The time period in years
-    
-    Returns:
-        float: The calculated interest
-    """
-    return principal * rate * time
-```
-
-### Function with Error Handling
-```python
-def safe_divide(a, b):
-    try:
-        return a / b
-    except ZeroDivisionError:
-        return "Error: Division by zero"
-    except TypeError:
-        return "Error: Invalid input types"
-
-print(safe_divide(10, 2))   # 5.0
-print(safe_divide(10, 0))   # Error: Division by zero
-print(safe_divide("10", 2)) # Error: Invalid input types
-```
+### Part 2 (Advanced)
+6. Generate all permutations
+7. Calculate compound interest
+8. Find longest common subsequence
+9. Validate credit card number (Luhn algorithm)
+10. Create a simple calculator function
 
 ## Best Practices
 
@@ -456,5 +302,93 @@ def check_eligibility(age, income):
         return False
 ```
 
-## Practice Examples
-See `practice.py` for hands-on exercises with functions! 
+### Use Type Hints
+```python
+def calculate_area(length: float, width: float) -> float:
+    return length * width
+
+def process_data(data: list) -> dict:
+    return {"count": len(data), "sum": sum(data)}
+```
+
+### Document Your Functions
+```python
+def calculate_interest(principal: float, rate: float, time: float) -> float:
+    """
+    Calculate simple interest.
+    
+    Args:
+        principal (float): The principal amount
+        rate (float): The interest rate (as decimal)
+        time (float): The time period in years
+    
+    Returns:
+        float: The calculated interest
+    """
+    return principal * rate * time
+```
+
+### Handle Errors Gracefully
+```python
+def safe_divide(a, b):
+    try:
+        return a / b
+    except ZeroDivisionError:
+        return "Error: Division by zero"
+    except TypeError:
+        return "Error: Invalid input types"
+```
+
+## Common Function Patterns
+
+### Function with Error Handling
+```python
+def safe_divide(a, b):
+    try:
+        return a / b
+    except ZeroDivisionError:
+        return "Error: Division by zero"
+    except TypeError:
+        return "Error: Invalid input types"
+
+print(safe_divide(10, 2))   # 5.0
+print(safe_divide(10, 0))   # Error: Division by zero
+print(safe_divide("10", 2)) # Error: Invalid input types
+```
+
+### Function with Type Hints
+```python
+def calculate_area(length: float, width: float) -> float:
+    return length * width
+
+def process_data(data: list) -> dict:
+    return {"count": len(data), "sum": sum(data)}
+```
+
+### Function with Documentation
+```python
+def calculate_interest(principal: float, rate: float, time: float) -> float:
+    """
+    Calculate simple interest.
+    
+    Args:
+        principal (float): The principal amount
+        rate (float): The interest rate (as decimal)
+        time (float): The time period in years
+    
+    Returns:
+        float: The calculated interest
+    """
+    return principal * rate * time
+```
+
+## Next Steps
+After completing this module, you should be comfortable with:
+- Basic and advanced function concepts
+- Parameter types and return values
+- Lambda functions and functional programming
+- Recursion and higher-order functions
+- Built-in functions that work with functions
+- Best practices for function design
+
+Move on to the next module to continue your Python learning journey! 
