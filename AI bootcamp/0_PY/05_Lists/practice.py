@@ -35,8 +35,8 @@ print(f"Original: {numbers}")
 numbers.append(4)
 print(f"After append(4): {numbers}")
 
-numbers.insert(1, 1.5)
-print(f"After insert(1, 1.5): {numbers}")
+numbers.insert(1, 2)
+print(f"After insert(1, 2): {numbers}")
 
 numbers.extend([5, 6])
 print(f"After extend([5, 6]): {numbers}")
