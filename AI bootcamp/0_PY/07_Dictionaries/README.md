@@ -3,6 +3,55 @@
 ## Overview
 Dictionaries in Python are unordered collections of key-value pairs. They are mutable, fast for lookups, and are one of the most versatile data structures in Python.
 
+## Course Structure
+
+This course is organized into focused modules for better learning:
+
+### 1. Basic Operations
+- **`01_dictionary_creation.py`** - Creating dictionaries using various methods
+- **`02_accessing_dictionary_elements.py`** - Accessing and retrieving dictionary data
+- **`03_modifying_dictionaries.py`** - Adding, updating, and removing dictionary items
+
+### 2. Advanced Operations
+- **`04_dictionary_methods.py`** - Dictionary methods like setdefault(), pop(), copy()
+- **`05_dictionary_operations.py`** - Merging, comprehension, and transformation operations
+- **`06_common_dictionary_patterns.py`** - Common patterns like counting, grouping, caching
+
+### 3. Special Features
+- **`07_builtin_functions_dictionaries.py`** - Built-in functions working with dictionaries
+- **`08_dictionary_views.py`** - Dictionary views (keys, values, items)
+
+### 4. Practice Problems
+- **`09_practice_problems_1.py`** - Basic practice problems with dictionaries
+- **`10_practice_problems_2.py`** - Advanced problems including caching and configuration
+
+## How to Use This Course
+
+### Running Individual Files
+Each file can be run independently to focus on specific concepts:
+
+```bash
+# Run dictionary creation
+python 01_dictionary_creation.py
+
+# Run accessing elements
+python 02_accessing_dictionary_elements.py
+
+# Run modification methods
+python 03_modifying_dictionaries.py
+
+# And so on for each file...
+```
+
+### Learning Path
+1. Start with `01_dictionary_creation.py` to understand dictionary basics
+2. Move to `02_accessing_dictionary_elements.py` and `03_modifying_dictionaries.py` for core operations
+3. Study `04_dictionary_methods.py` and `05_dictionary_operations.py` for advanced usage
+4. Learn about `06_common_dictionary_patterns.py` for practical patterns
+5. Explore `07_builtin_functions_dictionaries.py` for built-in function usage
+6. Understand `08_dictionary_views.py` for view objects
+7. Practice with `09_practice_problems_1.py` and `10_practice_problems_2.py`
+
 ## Dictionary Creation
 ```python
 # Empty dictionary
@@ -199,7 +248,7 @@ students = [
     {"name": "Alice", "grade": "A"},
     {"name": "Bob", "grade": "B"},
     {"name": "Charlie", "grade": "A"},
-    {"name": "Diana", "grade": "C"}
+    {"name": "Diana", "grade": "C"},
 ]
 
 grades = {}
@@ -211,23 +260,9 @@ for student in students:
 
 # Using defaultdict
 from collections import defaultdict
-grades = defaultdict(list)
+grades_dd = defaultdict(list)
 for student in students:
-    grades[student["grade"]].append(student["name"])
-```
-
-### Counting Items
-```python
-from collections import Counter
-
-# Using Counter
-words = ["apple", "banana", "apple", "cherry", "banana"]
-word_counts = Counter(words)
-
-# Manual counting
-counts = {}
-for word in words:
-    counts[word] = counts.get(word, 0) + 1
+    grades_dd[student["grade"]].append(student["name"])
 ```
 
 ## Built-in Functions with Dictionaries
@@ -235,12 +270,12 @@ for word in words:
 person = {"name": "Alice", "age": 25, "city": "New York"}
 
 len(person)      # 3
-max(person)      # 'name' (alphabetical)
+max(person)      # 'name' (lexicographic)
 min(person)      # 'age'
-any(person)      # True (any key is truthy)
-all(person)      # True (all keys are truthy)
+any(person)      # True
+all(person)      # True
 
-# sorted() with dictionaries
+# sorted()
 sorted(person)                    # ['age', 'city', 'name']
 sorted(person.items())            # [('age', 25), ('city', 'New York'), ('name', 'Alice')]
 sorted(person.items(), key=lambda x: x[1])  # Sort by values
@@ -250,36 +285,49 @@ sorted(person.items(), key=lambda x: x[1])  # Sort by values
 ```python
 person = {"name": "Alice", "age": 25, "city": "New York"}
 
-# Views are dynamic
 keys_view = person.keys()
 values_view = person.values()
 items_view = person.items()
 
-# Views update when dictionary changes
+# Views are dynamic
 person["job"] = "Engineer"
 print(list(keys_view))  # ['name', 'age', 'city', 'job']
 
-# Converting to list (static snapshot)
-keys_list = list(person.keys())
+# Views support set operations
+dict1 = {"a": 1, "b": 2}
+dict2 = {"b": 3, "c": 4}
+
+keys1 = dict1.keys()
+keys2 = dict2.keys()
+
+keys1 & keys2  # {'b'} (intersection)
+keys1 | keys2  # {'a', 'b', 'c'} (union)
+keys1 - keys2  # {'a'} (difference)
 ```
 
 ## Performance Considerations
 ```python
-# Dictionary lookups are O(1) - very fast
-large_dict = {i: i**2 for i in range(1000000)}
-# large_dict[500000]  # Very fast lookup
+# Dictionaries are very fast for lookups
+import time
 
-# Key considerations
-# 1. Keys should be hashable (immutable)
-# 2. Dictionary order is preserved (Python 3.7+)
-# 3. Memory usage increases with size
-# 4. Use .get() for safe access
-# 5. Use .setdefault() for conditional updates
+# Creating large dictionary
+large_dict = {i: i**2 for i in range(1000000)}
+
+# Lookup time
+start = time.time()
+for i in range(1000):
+    _ = large_dict.get(i)
+end = time.time()
+print(f"Lookup time: {end - start:.6f} seconds")
+
+# Memory usage
+import sys
+print(f"Dictionary size: {sys.getsizeof(large_dict)} bytes")
 ```
 
 ## Common Use Cases
 
-### Configuration Storage
+### Configuration
 ```python
 config = {
     "database": {
@@ -288,8 +336,8 @@ config = {
         "name": "myapp"
     },
     "api": {
-        "base_url": "https://api.example.com",
-        "timeout": 30
+        "timeout": 30,
+        "retries": 3
     }
 }
 
@@ -298,56 +346,32 @@ db_host = config["database"]["host"]
 api_timeout = config["api"]["timeout"]
 ```
 
-### Caching/Memoization
+### Caching
 ```python
-def fibonacci(n, cache={}):
+cache = {}
+
+def expensive_function(n):
     if n in cache:
         return cache[n]
-    if n <= 1:
-        return n
-    cache[n] = fibonacci(n-1, cache) + fibonacci(n-2, cache)
-    return cache[n]
+    
+    result = n ** 2  # Expensive calculation
+    cache[n] = result
+    return result
 ```
 
-### JSON-like Data
+### Data Transformation
 ```python
-# API response simulation
-api_response = {
-    "status": "success",
-    "data": {
-        "users": [
-            {"id": 1, "name": "Alice"},
-            {"id": 2, "name": "Bob"}
-        ],
-        "total": 2
-    },
-    "timestamp": "2024-01-01T12:00:00Z"
-}
+# Converting between formats
+users = [
+    {"id": 1, "name": "Alice", "age": 25},
+    {"id": 2, "name": "Bob", "age": 30},
+    {"id": 3, "name": "Charlie", "age": 35},
+]
 
-# Accessing nested data
-users = api_response["data"]["users"]
-total_users = api_response["data"]["total"]
-```
-
-## Best Practices
-```python
-# 1. Use descriptive key names
-good = {"user_name": "Alice", "user_age": 25}
-bad = {"n": "Alice", "a": 25}
-
-# 2. Use .get() for safe access
-age = person.get("age", 0)  # Instead of person["age"]
-
-# 3. Use .setdefault() for conditional updates
-person.setdefault("scores", []).append(85)
-
-# 4. Use dict comprehension for transformations
-upper_person = {k.upper(): v for k, v in person.items()}
-
-# 5. Use defaultdict for counting/grouping
-from collections import defaultdict
-counts = defaultdict(int)
+# Convert to dictionary with id as key
+user_dict = {user["id"]: user for user in users}
+print(user_dict)
 ```
 
 ## Practice Examples
-See `practice.py` for hands-on exercises with dictionaries! 
+Each file contains hands-on exercises with dictionaries! Start with the basic files and work your way up to the practice problems. 

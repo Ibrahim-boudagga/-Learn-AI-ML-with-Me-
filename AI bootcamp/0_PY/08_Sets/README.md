@@ -3,6 +3,57 @@
 ## Overview
 Sets in Python are unordered collections of unique elements. They are mutable and support mathematical set operations like union, intersection, and difference.
 
+## Course Structure
+
+This course is organized into focused modules for better learning:
+
+### 1. Basic Operations
+- **`01_set_creation.py`** - Creating sets using various methods
+- **`02_set_properties.py`** - Set properties and characteristics
+- **`03_set_operations.py`** - Adding, removing, and modifying set elements
+
+### 2. Advanced Operations
+- **`04_set_membership.py`** - Membership testing and boolean operations
+- **`05_mathematical_set_operations.py`** - Union, intersection, difference operations
+- **`06_set_methods.py`** - Set methods and comparison operations
+
+### 3. Special Features
+- **`07_set_comprehension.py`** - Set comprehensions and transformations
+- **`08_frozen_sets.py`** - Immutable frozen sets
+- **`09_builtin_functions_sets.py`** - Built-in functions working with sets
+
+### 4. Practice Problems
+- **`10_practice_problems_1.py`** - Basic practice problems with sets
+- **`11_practice_problems_2.py`** - Advanced problems including caching and validation
+
+## How to Use This Course
+
+### Running Individual Files
+Each file can be run independently to focus on specific concepts:
+
+```bash
+# Run set creation
+python 01_set_creation.py
+
+# Run set properties
+python 02_set_properties.py
+
+# Run set operations
+python 03_set_operations.py
+
+# And so on for each file...
+```
+
+### Learning Path
+1. Start with `01_set_creation.py` to understand set basics
+2. Move to `02_set_properties.py` and `03_set_operations.py` for core operations
+3. Study `04_set_membership.py` and `05_mathematical_set_operations.py` for advanced usage
+4. Learn about `06_set_methods.py` for method usage
+5. Explore `07_set_comprehension.py` for transformations
+6. Understand `08_frozen_sets.py` for immutable sets
+7. Practice with `09_builtin_functions_sets.py` for built-in function usage
+8. Practice with `10_practice_problems_1.py` and `11_practice_problems_2.py`
+
 ## Set Creation
 ```python
 # Empty set
@@ -213,64 +264,7 @@ set_dict = {frozen_fruits: "fruit set"}
 # Frozen sets support set operations
 set1 = frozenset([1, 2, 3])
 set2 = frozenset([3, 4, 5])
-union = set1 | set2  # Returns a frozenset
-```
-
-## Common Use Cases
-
-### Removing Duplicates
-```python
-# From list
-numbers = [1, 2, 2, 3, 3, 4, 5, 5]
-unique_numbers = list(set(numbers))
-
-# From string
-text = "hello world"
-unique_chars = set(text)
-```
-
-### Finding Common Elements
-```python
-# Students in both classes
-math_students = {"Alice", "Bob", "Charlie", "Diana"}
-science_students = {"Bob", "Diana", "Eve", "Frank"}
-
-both_classes = math_students & science_students
-print(f"Students in both classes: {both_classes}")
-```
-
-### Finding Unique Elements
-```python
-# Elements in either class but not both
-either_class = math_students ^ science_students
-print(f"Students in only one class: {either_class}")
-```
-
-### Data Validation
-```python
-# Valid categories
-valid_categories = {"electronics", "clothing", "books", "sports"}
-
-def validate_category(category):
-    return category in valid_categories
-
-print(validate_category("electronics"))  # True
-print(validate_category("food"))        # False
-```
-
-## Performance Considerations
-```python
-# Set membership is O(1) - very fast
-large_set = set(range(1000000))
-# 500000 in large_set  # Very fast lookup
-
-# Sets use more memory than lists
-# But provide faster lookups
-
-# Use cases:
-# - When you need unique elements
-# - When you need fast membership testing
-# - When you need set operations
+union = set1 | set2  # Returns a regular set
 ```
 
 ## Built-in Functions with Sets
@@ -278,52 +272,72 @@ large_set = set(range(1000000))
 fruits = {"apple", "banana", "orange"}
 
 len(fruits)      # 3
-max(fruits)      # 'orange' (alphabetical)
+max(fruits)      # 'orange' (lexicographic)
 min(fruits)      # 'apple'
 any(fruits)      # True
 all(fruits)      # True
 
 # sorted() with sets
-sorted_fruits = sorted(fruits)  # Returns list
+sorted_fruits = sorted(fruits)  # ['apple', 'banana', 'orange']
 ```
 
-## Set vs List vs Tuple
+## Common Use Cases
+
+### Removing Duplicates
 ```python
-# When to use sets:
-# - Need unique elements
-# - Need fast membership testing
-# - Need set operations
-
-# When to use lists:
-# - Need ordered collection
-# - Need to modify elements
-# - Need to access by index
-
-# When to use tuples:
-# - Need immutable collection
-# - Need ordered collection
-# - Need to use as dictionary key
+# Remove duplicates from list
+numbers = [1, 2, 2, 3, 3, 4, 5, 5]
+unique_numbers = list(set(numbers))
+print(unique_numbers)  # [1, 2, 3, 4, 5]
 ```
 
-## Best Practices
+### Finding Common Elements
 ```python
-# 1. Use sets for unique collections
-unique_tags = set(["python", "programming", "tutorial", "python"])
+# Find common elements between two lists
+list1 = [1, 2, 3, 4, 5]
+list2 = [4, 5, 6, 7, 8]
+common = list(set(list1) & set(list2))
+print(common)  # [4, 5]
+```
 
-# 2. Use sets for fast membership testing
-valid_users = {"alice", "bob", "charlie"}
-if username in valid_users:
-    print("Valid user")
+### Set Operations for Data Analysis
+```python
+# Students in different classes
+math_students = {"Alice", "Bob", "Charlie", "Diana"}
+science_students = {"Bob", "Diana", "Eve", "Frank"}
 
-# 3. Use set operations for data analysis
-completed_tasks = {"task1", "task2", "task4"}
-all_tasks = {"task1", "task2", "task3", "task4"}
-pending_tasks = all_tasks - completed_tasks
+# Students taking both classes
+both_classes = math_students & science_students
 
-# 4. Use set comprehension for transformations
-numbers = {1, 2, 3, 4, 5}
-squares = {x**2 for x in numbers}
+# Students taking only math
+only_math = math_students - science_students
+
+# All students
+all_students = math_students | science_students
+```
+
+### Performance Considerations
+```python
+# Sets are very fast for membership testing
+import time
+
+large_set = set(range(1000000))
+large_list = list(range(1000000))
+
+# Set membership test
+start = time.time()
+for i in range(1000):
+    _ = i in large_set
+end = time.time()
+print(f"Set membership: {end - start:.6f} seconds")
+
+# List membership test
+start = time.time()
+for i in range(1000):
+    _ = i in large_list
+end = time.time()
+print(f"List membership: {end - start:.6f} seconds")
 ```
 
 ## Practice Examples
-See `practice.py` for hands-on exercises with sets! 
+Each file contains hands-on exercises with sets! Start with the basic files and work your way up to the practice problems. 
