@@ -237,7 +237,7 @@ class Cache:
     def get(self, key):
         if key in self.cache:
             # Check if item has expired
-            if time.time() - self.timestamps[key] > self.ttl:
+            if key in self.timestamps and time.time() - self.timestamps[key] > self.ttl:
                 self.delete(key)
                 return None
             else:

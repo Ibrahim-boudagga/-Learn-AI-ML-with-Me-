@@ -66,7 +66,7 @@ PUBLIC_CONSTANT = 42
 _private_constant = "secret"
 
 # Update __all__ to control exports
-__all__ = ["public_function", "PUBLIC_CONSTANT", "Calculator", "StringUtils"]
+__all__ = ["public_function", "PUBLIC_CONSTANT", "Calculator", "StringUtils"]  # type: ignore
 
 print(f"Public exports: {__all__}")
 
