@@ -47,10 +47,6 @@ print()
 print("3. Return Values:")
 
 
-def square(x):
-    return x**2
-
-
 def get_min_max(numbers):
     if not numbers:
         return None, None
@@ -69,7 +65,6 @@ def check_age(age):
 
 
 # Testing return values
-print(f"Square of 5: {square(5)}")
 numbers = [1, 2, 3, 4, 5]
 min_val, max_val = get_min_max(numbers)
 print(f"Min: {min_val}, Max: {max_val}")
