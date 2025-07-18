@@ -133,5 +133,64 @@ result2 = 10 // 3  # 3
 round(0.1 + 0.2, 1)  # 0.3
 ```
 
+## Course Structure
+
+This Numbers section is organized into individual practice files for focused learning:
+
+### **Practice Files:**
+
+1. **`01_basic_number_types.py`** - Basic number types
+   - Integer, float, and complex numbers
+   - Understanding numeric data types
+
+2. **`02_mathematical_operations.py`** - Mathematical operations
+   - Addition, subtraction, multiplication, division
+   - Floor division, modulo, exponentiation
+
+3. **`03_assignment_operators.py`** - Assignment operators
+   - Augmented assignment operators
+   - Combining operations with assignment
+
+4. **`04_type_conversion.py`** - Type conversion
+   - Converting between numeric types
+   - String to number conversion
+
+5. **`05_built_in_functions.py`** - Built-in functions
+   - abs(), min(), max(), sum()
+   - Statistical functions for numbers
+
+6. **`06_math_module.py`** - Math module
+   - Advanced mathematical functions
+   - Constants like π, trigonometric functions
+
+7. **`07_practice_problems.py`** - Practice problems
+   - 5 practical exercises
+   - Real-world number calculations
+
+### **How to Use This Course:**
+
+1. **Start with the README** - Read through the theory and concepts
+2. **Run each file individually** - Execute `python filename.py` to see examples
+3. **Experiment with code** - Modify numbers and try different operations
+4. **Complete practice problems** - Work through the exercises in `07_practice_problems.py`
+5. **Move to next section** - Progress to Strings section
+
+### **Running the Examples:**
+
+```bash
+# Run individual files
+python 01_basic_number_types.py
+python 02_mathematical_operations.py
+python 03_assignment_operators.py
+# ... and so on
+
+# Or run all files in sequence
+for file in *.py; do
+    echo "=== Running $file ==="
+    python "$file"
+    echo
+done
+```
+
 ## Practice Examples
-See `practice.py` for hands-on exercises with numbers! 
+Each file contains hands-on exercises and examples. Start with `01_basic_number_types.py` and work your way through! 
