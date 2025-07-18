@@ -376,5 +376,78 @@ for i in range(1000):
 result = "".join(str(i) for i in range(1000))
 ```
 
+## Course Structure
+
+This Variables and Data Types section is organized into individual practice files for focused learning:
+
+### **Practice Files:**
+
+1. **`01_variable_assignment.py`** - Basic variable assignment
+   - Creating variables with different data types
+   - Understanding variable naming conventions
+
+2. **`02_multiple_assignment.py`** - Multiple variable assignment
+   - Assigning multiple variables at once
+   - Augmented assignment operators
+
+3. **`03_data_types.py`** - Python data types
+   - Numeric types (int, float, complex)
+   - String and boolean types
+   - Type checking with type() function
+
+4. **`04_type_checking.py`** - Type checking and validation
+   - Using type() and isinstance() functions
+   - Checking data types programmatically
+
+5. **`05_type_conversion.py`** - Type conversion
+   - Converting between different data types
+   - Safe type conversion techniques
+
+6. **`06_memory_references.py`** - Memory and object references
+   - Understanding object identity
+   - 'is' vs '==' operators
+   - Memory address with id() function
+
+7. **`07_mutable_immutable.py`** - Mutable vs immutable types
+   - Understanding which types can be modified
+   - Implications for variable assignment
+
+8. **`08_variable_scope.py`** - Variable scope
+   - Global vs local variables
+   - Variable accessibility in functions
+
+9. **`09_truthy_falsy.py`** - Truthy and falsy values
+   - Understanding boolean conversion
+   - Values that evaluate to True/False
+
+10. **`10_practice_problems.py`** - Practice problems
+    - 7 practical exercises
+    - Real-world variable and type handling
+
+### **How to Use This Course:**
+
+1. **Start with the README** - Read through the theory and concepts
+2. **Run each file individually** - Execute `python filename.py` to see examples
+3. **Experiment with code** - Modify variables and try different data types
+4. **Complete practice problems** - Work through the exercises in `10_practice_problems.py`
+5. **Move to next section** - Progress to Numbers section
+
+### **Running the Examples:**
+
+```bash
+# Run individual files
+python 01_variable_assignment.py
+python 02_multiple_assignment.py
+python 03_data_types.py
+# ... and so on
+
+# Or run all files in sequence
+for file in *.py; do
+    echo "=== Running $file ==="
+    python "$file"
+    echo
+done
+```
+
 ## Practice Examples
-See `practice.py` for hands-on exercises with variables and data types! 
+Each file contains hands-on exercises and examples. Start with `01_variable_assignment.py` and work your way through! 
