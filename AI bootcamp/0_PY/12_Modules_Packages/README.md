@@ -1,535 +1,278 @@
 # Python Modules and Packages
 
-## Overview
-Modules and packages are ways to organize and reuse Python code. A module is a single Python file, while a package is a directory containing multiple modules and an `__init__.py` file.
+This section covers Python modules and packages, including creating modules, using built-in modules, import techniques, and advanced package concepts.
 
-## Modules
+## Course Structure
 
-### Creating a Simple Module
-```python
-# math_utils.py
-def add(a, b):
-    return a + b
+### 1. Creating Simple Modules
+**File:** `01_creating_simple_modules.py`
+- Creating module-like classes
+- Static methods and class methods
+- Module constants and configuration
+- Error handling in modules
 
-def subtract(a, b):
-    return a - b
+### 2. Built-in Modules
+**File:** `02_builtin_modules.py`
+- Math module (sqrt, pi, e, ceil, floor, etc.)
+- Random module (randint, choice, shuffle, etc.)
+- Datetime module (now, strftime, timedelta, etc.)
+- OS module (getcwd, listdir, environ, etc.)
+- Sys module (version, platform, path, etc.)
+- Collections module (defaultdict, Counter, namedtuple, deque, etc.)
+- Re module (findall, sub, match, etc.)
+- JSON module (dumps, loads, etc.)
+- Pickle module (dumps, loads, etc.)
+- Urllib module (urlparse, parse_qs, etc.)
 
-def multiply(a, b):
-    return a * b
+### 3. Import Techniques
+**File:** `03_import_techniques.py`
+- Import with aliases
+- Import specific functions
+- Conditional imports
+- Relative imports (simulated)
+- Import from submodules
+- Custom namespaces
+- Function renaming
+- Multiple imports
+- Exception handling for imports
+- Lazy loading
+- Version checking
+- Environment-based imports
+- Custom import functions
 
-def divide(a, b):
-    if b == 0:
-        raise ValueError("Cannot divide by zero")
-    return a / b
+### 4. Collections Module
+**File:** `04_collections_module.py`
+- DefaultDict with different factories
+- Counter operations and methods
+- NamedTuple with defaults and type hints
+- Deque operations and rotation
+- OrderedDict with move_to_end
+- ChainMap for multiple dictionaries
+- Practical examples and use cases
 
-PI = 3.14159
-E = 2.71828
+### 5. JSON Module
+**File:** `05_json_module.py`
+- Python object to JSON conversion
+- JSON to Python object conversion
+- Different data types handling
+- Custom objects and encoders
+- File operations (simulated)
+- Pretty printing and sorting
+- Unicode handling
+- JSON validation
+- Nested structures
+- Date handling
+- Error handling
+
+### 6. Pickle Module
+**File:** `06_pickle_module.py`
+- Basic pickle operations
+- Different data types
+- Custom objects
+- Functions and lambda functions
+- Classes and instances
+- Nested structures
+- Error handling
+- Different protocols
+- File operations (simulated)
+- Security considerations
+- Pickle vs JSON comparison
+
+### 7. Creating Package Structure
+**File:** `07_creating_package_structure.py`
+- Basic package structure
+- Calculator package
+- StringUtils package
+- Configuration modules
+- Singleton logger
+- Data formatters (JSON, XML, CSV, YAML)
+- Plugin system
+- File manager
+- Data validator
+
+### 8. Module Attributes
+**File:** `08_module_attributes.py`
+- Basic module attributes
+- Module information
+- Module path and location
+- Module documentation
+- Module exports
+- Module configuration
+- Module state management
+- Module classes
+- Module utilities
+- Module testing
+- Module cleanup
+- Module constants
+- Module versioning
+
+### 9. Dynamic Imports
+**File:** `09_dynamic_imports.py`
+- Basic dynamic module import
+- Dynamic function import
+- Dynamic class import
+- Conditional dynamic imports
+- Dynamic import with fallback
+- Configuration-based imports
+- Plugin system with dynamic imports
+- Module reloading
+- Submodule imports
+- Error handling
+- Module caching
+- Import validation
+- Performance monitoring
+
+### 10. Practice Problems - Part 1
+**File:** `10_practice_problems_1.py`
+- Configuration module with class methods
+- Singleton logger with advanced features
+- Data formatter factory (JSON, XML, CSV, YAML)
+- Plugin system with multiple plugins
+
+### 11. Practice Problems - Part 2
+**File:** `11_practice_problems_2.py`
+- File manager with comprehensive operations
+- Data validator with multiple validation types
+- Cache implementation with TTL and LRU
+- Rate limiter with time windows
+
+## How to Use These Files
+
+### Running Individual Files
+Each file can be run independently to learn specific concepts:
+
+```bash
+# Run basic module creation
+python 01_creating_simple_modules.py
+
+# Run built-in modules examples
+python 02_builtin_modules.py
+
+# Run import techniques
+python 03_import_techniques.py
+
+# Run collections module examples
+python 04_collections_module.py
+
+# Run JSON module examples
+python 05_json_module.py
+
+# Run pickle module examples
+python 06_pickle_module.py
+
+# Run package structure examples
+python 07_creating_package_structure.py
+
+# Run module attributes examples
+python 08_module_attributes.py
+
+# Run dynamic imports examples
+python 09_dynamic_imports.py
+
+# Run practice problems
+python 10_practice_problems_1.py
+python 11_practice_problems_2.py
 ```
 
-### Importing Modules
-```python
-# Import entire module
-import math_utils
+### Running All Files Sequentially
+To run all files in order:
 
-result = math_utils.add(5, 3)
-print(result)  # 8
-
-# Import specific functions
-from math_utils import add, subtract
-
-result = add(10, 5)
-print(result)  # 15
-
-# Import with alias
-import math_utils as mu
-
-result = mu.multiply(4, 6)
-print(result)  # 24
-
-# Import all (not recommended)
-from math_utils import *
-
-result = divide(10, 2)
-print(result)  # 5.0
+```bash
+# Run all files in sequence
+for file in *.py; do
+    echo "Running $file..."
+    python "$file"
+    echo "----------------------------------------"
+done
 ```
+
+## Key Learning Objectives
+
+### Module Creation
+- Understand how to create reusable modules
+- Learn to use static methods and class methods
+- Master module configuration and state management
 
 ### Built-in Modules
-```python
-# Math module
-import math
-print(math.pi)        # 3.141592653589793
-print(math.sqrt(16))  # 4.0
-
-# Random module
-import random
-print(random.randint(1, 10))  # Random number between 1 and 10
-print(random.choice(['apple', 'banana', 'orange']))
-
-# Datetime module
-import datetime
-now = datetime.datetime.now()
-print(now.strftime("%Y-%m-%d %H:%M:%S"))
-
-# OS module
-import os
-print(os.getcwd())  # Current working directory
-print(os.listdir()) # List files in current directory
-```
-
-## Package Structure
-
-### Basic Package
-```
-my_package/
-    __init__.py
-    module1.py
-    module2.py
-    subpackage/
-        __init__.py
-        submodule.py
-```
-
-### Creating a Package
-```python
-# my_package/__init__.py
-from .module1 import function1
-from .module2 import function2
-
-__version__ = "1.0.0"
-__author__ = "Your Name"
-
-# This makes the package importable
-```
-
-```python
-# my_package/module1.py
-def function1():
-    return "Hello from module1"
-
-def internal_function():
-    return "This is internal"
-```
-
-```python
-# my_package/module2.py
-def function2():
-    return "Hello from module2"
-
-class MyClass:
-    def __init__(self, value):
-        self.value = value
-    
-    def get_value(self):
-        return self.value
-```
-
-### Importing from Packages
-```python
-# Import from package
-import my_package
-
-result = my_package.function1()
-print(result)
-
-# Import specific module from package
-from my_package import module1
-
-result = module1.function1()
-print(result)
-
-# Import specific function
-from my_package.module1 import function1
-
-result = function1()
-print(result)
-
-# Import class
-from my_package.module2 import MyClass
-
-obj = MyClass("test")
-print(obj.get_value())
-```
-
-## Advanced Import Techniques
-
-### Relative Imports
-```python
-# Inside a package, you can use relative imports
-# my_package/subpackage/submodule.py
-
-# Import from parent package
-from ..module1 import function1
-
-# Import from sibling module
-from ..module2 import MyClass
-
-# Import from same level
-from .other_submodule import some_function
-```
-
-### Conditional Imports
-```python
-try:
-    import numpy as np
-    HAS_NUMPY = True
-except ImportError:
-    HAS_NUMPY = False
-    print("NumPy not available")
-
-def process_data(data):
-    if HAS_NUMPY:
-        return np.array(data)
-    else:
-        return list(data)
-```
-
-### Dynamic Imports
-```python
-import importlib
-
-# Import module dynamically
-module_name = "math"
-math_module = importlib.import_module(module_name)
-print(math_module.pi)
-
-# Import function dynamically
-def import_function(module_name, function_name):
-    module = importlib.import_module(module_name)
-    return getattr(module, function_name)
-
-sqrt_func = import_function("math", "sqrt")
-print(sqrt_func(16))
-```
-
-## Module Attributes
-
-### Special Module Attributes
-```python
-# __name__ - module name
-print(__name__)  # "__main__" if run directly, module name if imported
-
-# __file__ - module file path
-print(__file__)
-
-# __doc__ - module documentation
-print(__doc__)
-
-# __all__ - defines what gets imported with "from module import *"
-__all__ = ['public_function', 'PublicClass']
-
-def public_function():
-    return "This is public"
-
-def _private_function():
-    return "This is private"
-
-class PublicClass:
-    pass
-```
-
-### Module Documentation
-```python
-"""
-This is a module for mathematical operations.
-
-This module provides basic arithmetic functions and mathematical constants.
-It can be used for simple calculations and educational purposes.
-
-Author: Your Name
-Version: 1.0.0
-"""
-
-def add(a, b):
-    """
-    Add two numbers.
-    
-    Args:
-        a: First number
-        b: Second number
-    
-    Returns:
-        Sum of a and b
-    """
-    return a + b
-```
-
-## Package Management
-
-### Creating a Setup File
-```python
-# setup.py
-from setuptools import setup, find_packages
-
-setup(
-    name="my_package",
-    version="1.0.0",
-    author="Your Name",
-    author_email="your.email@example.com",
-    description="A sample Python package",
-    long_description=open("README.md").read(),
-    long_description_content_type="text/markdown",
-    packages=find_packages(),
-    install_requires=[
-        "requests>=2.25.0",
-        "numpy>=1.19.0",
-    ],
-    python_requires=">=3.7",
-    classifiers=[
-        "Development Status :: 3 - Alpha",
-        "Intended Audience :: Developers",
-        "License :: OSI Approved :: MIT License",
-        "Programming Language :: Python :: 3",
-    ],
-)
-```
-
-### Installing Packages
-```bash
-# Install in development mode
-pip install -e .
-
-# Install from PyPI
-pip install package_name
-
-# Install specific version
-pip install package_name==1.0.0
-
-# Install with requirements
-pip install -r requirements.txt
-```
-
-## Common Module Patterns
-
-### Singleton Pattern
-```python
-# singleton.py
-class Singleton:
-    _instance = None
-    
-    def __new__(cls):
-        if cls._instance is None:
-            cls._instance = super().__new__(cls)
-        return cls._instance
-    
-    def __init__(self):
-        if not hasattr(self, 'initialized'):
-            self.data = []
-            self.initialized = True
-    
-    def add_data(self, item):
-        self.data.append(item)
-    
-    def get_data(self):
-        return self.data.copy()
-```
-
-### Factory Pattern
-```python
-# factory.py
-class Animal:
-    def speak(self):
-        pass
-
-class Dog(Animal):
-    def speak(self):
-        return "Woof!"
-
-class Cat(Animal):
-    def speak(self):
-        return "Meow!"
-
-def create_animal(animal_type):
-    animals = {
-        "dog": Dog,
-        "cat": Cat,
-    }
-    
-    if animal_type in animals:
-        return animals[animal_type]()
-    else:
-        raise ValueError(f"Unknown animal type: {animal_type}")
-```
-
-### Configuration Module
-```python
-# config.py
-import os
-
-class Config:
-    DEBUG = os.getenv('DEBUG', 'False').lower() == 'true'
-    DATABASE_URL = os.getenv('DATABASE_URL', 'sqlite:///app.db')
-    SECRET_KEY = os.getenv('SECRET_KEY', 'default-secret-key')
-    
-    @classmethod
-    def get_database_url(cls):
-        return cls.DATABASE_URL
-    
-    @classmethod
-    def is_debug(cls):
-        return cls.DEBUG
-```
-
-## Testing Modules
-
-### Unit Testing
-```python
-# test_math_utils.py
-import unittest
-from math_utils import add, subtract, multiply, divide
-
-class TestMathUtils(unittest.TestCase):
-    def test_add(self):
-        self.assertEqual(add(2, 3), 5)
-        self.assertEqual(add(-1, 1), 0)
-    
-    def test_subtract(self):
-        self.assertEqual(subtract(5, 3), 2)
-        self.assertEqual(subtract(1, 1), 0)
-    
-    def test_multiply(self):
-        self.assertEqual(multiply(2, 3), 6)
-        self.assertEqual(multiply(-2, 3), -6)
-    
-    def test_divide(self):
-        self.assertEqual(divide(6, 2), 3)
-        self.assertEqual(divide(5, 2), 2.5)
-        
-        with self.assertRaises(ValueError):
-            divide(5, 0)
-
-if __name__ == '__main__':
-    unittest.main()
-```
-
-## Best Practices
-
-### Module Organization
-```python
-# Good structure
-"""
-Module documentation
-"""
-
-# Standard library imports
-import os
-import sys
-from datetime import datetime
-
-# Third-party imports
-import requests
-import numpy as np
-
-# Local imports
-from .utils import helper_function
-from .config import Config
-
-# Constants
-MAX_RETRIES = 3
-DEFAULT_TIMEOUT = 30
-
-# Classes
-class MyClass:
-    pass
-
-# Functions
-def main():
-    pass
-
-if __name__ == "__main__":
-    main()
-```
-
-### Import Organization
-```python
-# 1. Standard library imports
-import os
-import sys
-from datetime import datetime
-
-# 2. Third-party imports
-import requests
-import numpy as np
-
-# 3. Local application imports
-from my_package import my_module
-from my_package.subpackage import submodule
-```
-
-### Avoiding Circular Imports
-```python
-# Bad - circular import
-# module1.py
-from module2 import function2
-
-def function1():
-    return function2()
-
-# module2.py
-from module1 import function1
-
-def function2():
-    return function1()
-
-# Good - use lazy imports
-# module1.py
-def function1():
-    from module2 import function2
-    return function2()
-
-# module2.py
-def function2():
-    from module1 import function1
-    return function1()
-```
-
-## Common Built-in Modules
-
-### Collections
-```python
-from collections import defaultdict, Counter, namedtuple
-
-# DefaultDict
-d = defaultdict(list)
-d['a'].append(1)  # No KeyError
-
-# Counter
-c = Counter(['a', 'b', 'a', 'c'])
-print(c)  # Counter({'a': 2, 'b': 1, 'c': 1})
-
-# NamedTuple
-Point = namedtuple('Point', ['x', 'y'])
-p = Point(1, 2)
-print(p.x, p.y)
-```
-
-### JSON
-```python
-import json
-
-# Serialize
-data = {"name": "Alice", "age": 25}
-json_string = json.dumps(data)
-print(json_string)
-
-# Deserialize
-parsed_data = json.loads(json_string)
-print(parsed_data["name"])
-```
-
-### Pickle
-```python
-import pickle
-
-# Serialize object
-data = {"name": "Alice", "age": 25}
-with open("data.pkl", "wb") as f:
-    pickle.dump(data, f)
-
-# Deserialize object
-with open("data.pkl", "rb") as f:
-    loaded_data = pickle.load(f)
-print(loaded_data)
-```
-
-## Practice Examples
-See `practice.py` for hands-on exercises with modules and packages! 
+- Explore Python's standard library modules
+- Learn mathematical operations with math module
+- Understand random number generation
+- Work with dates and times
+- Handle file system operations
+- Process collections efficiently
+
+### Import Techniques
+- Master different import styles
+- Learn conditional and dynamic imports
+- Understand import error handling
+- Explore lazy loading techniques
+
+### Advanced Collections
+- Use defaultdict for automatic key creation
+- Count elements with Counter
+- Create structured data with namedtuple
+- Implement efficient queues with deque
+- Maintain order with OrderedDict
+- Chain multiple dictionaries with ChainMap
+
+### Data Serialization
+- Convert Python objects to JSON and back
+- Serialize complex objects with pickle
+- Handle different data formats
+- Work with file I/O operations
+
+### Package Development
+- Create organized package structures
+- Implement plugin systems
+- Build configuration management
+- Design singleton patterns
+- Create factory patterns
+
+### Dynamic Programming
+- Import modules at runtime
+- Build plugin architectures
+- Implement configuration-driven imports
+- Handle import errors gracefully
+
+## Practice Problems
+
+The practice problems cover real-world scenarios:
+
+1. **Configuration Management**: Create a centralized configuration system
+2. **Logging System**: Implement a singleton logger with multiple features
+3. **Data Formatting**: Build a factory for different output formats
+4. **Plugin Architecture**: Create an extensible plugin system
+5. **File Operations**: Build a comprehensive file management system
+6. **Data Validation**: Create a robust validation framework
+7. **Caching System**: Implement an LRU cache with TTL
+8. **Rate Limiting**: Build a rate limiter for API protection
+
+## Tips for Learning
+
+1. **Start with Basics**: Begin with simple module creation before moving to advanced concepts
+2. **Experiment**: Modify the examples to see how changes affect behavior
+3. **Combine Concepts**: Try combining multiple modules in your own projects
+4. **Practice Regularly**: Use the practice problems to reinforce your learning
+5. **Read Documentation**: Explore the official Python documentation for each module
+6. **Build Projects**: Create your own modules and packages to apply what you've learned
+
+## Common Patterns
+
+- **Singleton Pattern**: For loggers and configuration managers
+- **Factory Pattern**: For creating different types of objects
+- **Plugin Pattern**: For extensible systems
+- **Configuration Pattern**: For centralized settings management
+- **Cache Pattern**: For performance optimization
+- **Rate Limiting Pattern**: For API protection
+
+## Next Steps
+
+After completing this section, you should be able to:
+- Create well-structured Python modules and packages
+- Use Python's built-in modules effectively
+- Implement advanced import strategies
+- Build extensible systems with plugins
+- Handle data serialization and validation
+- Design robust configuration and logging systems
+
+This foundation will prepare you for building larger Python applications and working with external libraries and frameworks. 

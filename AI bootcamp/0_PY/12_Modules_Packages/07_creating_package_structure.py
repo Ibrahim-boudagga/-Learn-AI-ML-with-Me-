@@ -1,184 +1,8 @@
-# Python Modules and Packages Practice
+# Creating Package Structure
 
-print("=== PYTHON MODULES AND PACKAGES PRACTICE ===\n")
+print("=== CREATING PACKAGE STRUCTURE ===\n")
 
-# 1. Creating and Using Simple Modules
-print("1. Creating and Using Simple Modules:")
-
-
-# Simulating a math_utils module
-class MathUtils:
-    PI = 3.14159
-    E = 2.71828
-
-    @staticmethod
-    def add(a, b):
-        return a + b
-
-    @staticmethod
-    def subtract(a, b):
-        return a - b
-
-    @staticmethod
-    def multiply(a, b):
-        return a * b
-
-    @staticmethod
-    def divide(a, b):
-        if b == 0:
-            raise ValueError("Cannot divide by zero")
-        return a / b
-
-
-# Using the module
-print(f"Add: {MathUtils.add(5, 3)}")
-print(f"Subtract: {MathUtils.subtract(10, 4)}")
-print(f"Multiply: {MathUtils.multiply(6, 7)}")
-print(f"Divide: {MathUtils.divide(15, 3)}")
-print(f"PI: {MathUtils.PI}")
-print()
-
-# 2. Built-in Modules
-print("2. Built-in Modules:")
-
-import math
-import random
-import datetime
-import os
-
-# Math module
-print(f"Square root of 16: {math.sqrt(16)}")
-print(f"PI: {math.pi}")
-print(f"Ceiling of 4.3: {math.ceil(4.3)}")
-print(f"Floor of 4.7: {math.floor(4.7)}")
-
-# Random module
-print(f"Random number (1-10): {random.randint(1, 10)}")
-print(f"Random choice: {random.choice(['apple', 'banana', 'orange'])}")
-print(f"Random float: {random.random():.3f}")
-
-# Datetime module
-now = datetime.datetime.now()
-print(f"Current time: {now}")
-print(f"Formatted time: {now.strftime('%Y-%m-%d %H:%M:%S')}")
-
-# OS module
-print(f"Current directory: {os.getcwd()}")
-print(f"Platform: {os.name}")
-print()
-
-# 3. Import Techniques
-print("3. Import Techniques:")
-
-# Import with alias
-import math as m
-
-print(f"Using alias - PI: {m.pi}")
-
-# Import specific functions
-from math import sqrt, pi
-
-print(f"Direct import - sqrt(25): {sqrt(25)}")
-print(f"Direct import - pi: {pi}")
-
-# Import with conditional
-try:
-    import numpy as np
-
-    print("NumPy is available")
-    arr = np.array([1, 2, 3, 4, 5])
-    print(f"NumPy array: {arr}")
-except ImportError:
-    print("NumPy is not available")
-    arr = [1, 2, 3, 4, 5]
-    print(f"Regular list: {arr}")
-print()
-
-# 4. Collections Module
-print("4. Collections Module:")
-
-from collections import defaultdict, Counter, namedtuple
-
-# DefaultDict
-d = defaultdict(list)
-d["a"].append(1)
-d["a"].append(2)
-d["b"].append(3)
-print(f"DefaultDict: {dict(d)}")
-
-# Counter
-text = "hello world"
-char_count = Counter(text)
-print(f"Character count: {dict(char_count)}")
-
-word_count = Counter(text.split())
-print(f"Word count: {dict(word_count)}")
-
-# NamedTuple
-Person = namedtuple("Person", ["name", "age", "city"])
-person1 = Person("Alice", 25, "New York")
-person2 = Person("Bob", 30, "London")
-print(f"Person 1: {person1}")
-print(f"Person 2: {person2}")
-print(f"Person 1 name: {person1.name}")
-print()
-
-# 5. JSON Module
-print("5. JSON Module:")
-
-import json
-
-# Python object to JSON
-data = {
-    "name": "Alice",
-    "age": 25,
-    "city": "New York",
-    "hobbies": ["reading", "swimming"],
-    "active": True,
-}
-
-json_string = json.dumps(data, indent=2)
-print("Python to JSON:")
-print(json_string)
-
-# JSON to Python object
-parsed_data = json.loads(json_string)
-print(f"\nJSON to Python - name: {parsed_data['name']}")
-print(f"JSON to Python - age: {parsed_data['age']}")
-
-# Working with JSON files
-sample_data = {"users": [{"name": "Alice", "age": 25}, {"name": "Bob", "age": 30}]}
-
-# Write to JSON file (simulated)
-print(f"\nData to write to file: {sample_data}")
-
-# Read from JSON file (simulated)
-print(f"Data read from file: {sample_data}")
-print()
-
-# 6. Pickle Module
-print("6. Pickle Module:")
-
-import pickle
-
-# Python object to pickle
-data_to_pickle = {
-    "name": "Alice",
-    "scores": [85, 92, 78],
-    "grades": {"math": "A", "science": "B"},
-}
-
-# Simulate pickling
-pickled_data = pickle.dumps(data_to_pickle)
-print(f"Pickled data size: {len(pickled_data)} bytes")
-
-# Simulate unpickling
-unpickled_data = pickle.loads(pickled_data)
-print(f"Unpickled data: {unpickled_data}")
-print()
-
-# 7. Creating Package Structure
-print("7. Creating Package Structure:")
+print("1. Basic Package Structure:")
 
 
 # Simulating a package structure
@@ -196,8 +20,23 @@ class Calculator:
         self.history.append(f"{a} - {b} = {result}")
         return result
 
+    def multiply(self, a, b):
+        result = a * b
+        self.history.append(f"{a} * {b} = {result}")
+        return result
+
+    def divide(self, a, b):
+        if b == 0:
+            raise ValueError("Cannot divide by zero")
+        result = a / b
+        self.history.append(f"{a} / {b} = {result}")
+        return result
+
     def get_history(self):
-        return self.history
+        return self.history.copy()
+
+    def clear_history(self):
+        self.history.clear()
 
 
 class StringUtils:
@@ -215,64 +54,42 @@ class StringUtils:
         cleaned = text.lower().replace(" ", "")
         return cleaned == cleaned[::-1]
 
+    @staticmethod
+    def capitalize_words(text):
+        return " ".join(word.capitalize() for word in text.split())
+
+    @staticmethod
+    def remove_duplicates(text):
+        seen = set()
+        result = ""
+        for char in text:
+            if char not in seen:
+                result += char
+                seen.add(char)
+        return result
+
 
 # Using the package
+print("2. Using Calculator Package:")
 calc = Calculator()
 print(f"5 + 3 = {calc.add(5, 3)}")
 print(f"10 - 4 = {calc.subtract(10, 4)}")
+print(f"6 * 7 = {calc.multiply(6, 7)}")
+print(f"15 / 3 = {calc.divide(15, 3)}")
 print(f"History: {calc.get_history()}")
 
+print("\n3. Using StringUtils Package:")
 text = "Hello World"
-print(f"Reversed '{text}': '{StringUtils.reverse(text)}'")
-print(f"Vowels in '{text}': {StringUtils.count_vowels(text)}")
-print(f"'{text}' is palindrome: {StringUtils.is_palindrome(text)}")
-print()
+print(f"Original text: '{text}'")
+print(f"Reversed: '{StringUtils.reverse(text)}'")
+print(f"Vowel count: {StringUtils.count_vowels(text)}")
+print(f"Is palindrome: {StringUtils.is_palindrome(text)}")
+print(f"Capitalized: '{StringUtils.capitalize_words(text)}'")
+print(f"No duplicates: '{StringUtils.remove_duplicates(text)}'")
 
-# 8. Module Attributes
-print("8. Module Attributes:")
-
-# Simulating module attributes
-module_name = "__main__"
-module_file = "practice.py"
-module_doc = "This is a practice module for Python modules and packages"
-
-print(f"Module name: {module_name}")
-print(f"Module file: {module_file}")
-print(f"Module doc: {module_doc}")
-
-# Simulating __all__
-__all__ = ["Calculator", "StringUtils", "MathUtils"]
-
-print(f"All exports: {__all__}")
-print()
-
-# 9. Dynamic Imports
-print("9. Dynamic Imports:")
-
-import importlib
-
-# Dynamic module import
-module_name = "math"
-math_module = importlib.import_module(module_name)
-print(f"Imported module: {math_module}")
-print(f"Module PI: {math_module.pi}")
+print("\n4. Package with Configuration:")
 
 
-# Dynamic function import
-def import_function(module_name, function_name):
-    module = importlib.import_module(module_name)
-    return getattr(module, function_name)
-
-
-sqrt_func = import_function("math", "sqrt")
-print(f"Dynamic sqrt function: {sqrt_func(16)}")
-print()
-
-# 10. Practice Problems
-print("10. Practice Problems:")
-
-
-# Problem 1: Create a configuration module
 class Config:
     DEBUG = True
     DATABASE_URL = "sqlite:///app.db"
@@ -291,16 +108,24 @@ class Config:
     def get_max_connections(cls):
         return cls.MAX_CONNECTIONS
 
+    @classmethod
+    def set_debug(cls, value):
+        cls.DEBUG = value
+
 
 print(f"Database URL: {Config.get_database_url()}")
 print(f"Debug mode: {Config.is_debug()}")
 print(f"Max connections: {Config.get_max_connections()}")
 
+Config.set_debug(False)
+print(f"Debug mode after change: {Config.is_debug()}")
 
-# Problem 2: Create a singleton logger
+print("\n5. Package with Logger:")
+
+
 class Logger:
     _instance = None
-    logs = []  # Class attribute to satisfy linter
+    logs = []
 
     def __new__(cls):
         if cls._instance is None:
@@ -309,6 +134,8 @@ class Logger:
         return cls._instance
 
     def log(self, message, level="INFO"):
+        import datetime
+
         timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         log_entry = f"[{timestamp}] {level}: {message}"
         self.logs.append(log_entry)
@@ -316,6 +143,9 @@ class Logger:
 
     def get_logs(self):
         return self.logs.copy()
+
+    def clear_logs(self):
+        self.logs.clear()
 
 
 # Test singleton logger
@@ -329,8 +159,9 @@ logger1.log("Error occurred", "ERROR")
 
 print(f"All logs: {logger1.get_logs()}")
 
+print("\n6. Package with Data Formatters:")
 
-# Problem 3: Create a factory for different data formats
+
 class DataFormatter:
     def format_data(self, data):
         pass
@@ -338,6 +169,8 @@ class DataFormatter:
 
 class JSONFormatter(DataFormatter):
     def format_data(self, data):
+        import json
+
         return json.dumps(data, indent=2)
 
 
@@ -388,8 +221,9 @@ for format_type in ["json", "xml", "csv"]:
     except Exception as e:
         print(f"Error with {format_type}: {e}")
 
+print("\n7. Package with Plugin System:")
 
-# Problem 4: Create a plugin system
+
 class Plugin:
     def execute(self, data):
         pass
@@ -432,6 +266,10 @@ class PluginManager:
     def list_plugins(self):
         return list(self.plugins.keys())
 
+    def remove_plugin(self, name):
+        if name in self.plugins:
+            del self.plugins[name]
+
 
 # Test plugin system
 manager = PluginManager()
@@ -451,8 +289,9 @@ print(f"Doubled: {manager.execute_plugin('number', test_number)}")
 
 print(f"Available plugins: {manager.list_plugins()}")
 
+print("\n8. Package with File Manager:")
 
-# Problem 5: Create a module for file operations
+
 class FileManager:
     @staticmethod
     def read_file(filename):
@@ -496,8 +335,9 @@ print(FileManager.write_file("test.txt", "Hello, World!"))
 print(FileManager.read_file("test.txt"))
 print(FileManager.append_file("test.txt", "\nNew line"))
 
+print("\n9. Package with Data Validator:")
 
-# Problem 6: Create a module for data validation
+
 class DataValidator:
     @staticmethod
     def validate_email(email):
@@ -561,4 +401,4 @@ for password in test_passwords:
     valid, message = DataValidator.validate_password(password)
     print(f"  {password}: {message}")
 
-print("\n=== END OF PRACTICE ===")
+print("\n=== END OF CREATING PACKAGE STRUCTURE ===")
