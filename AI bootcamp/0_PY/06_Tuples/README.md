@@ -3,6 +3,57 @@
 ## Overview
 Tuples in Python are ordered, immutable collections of items. They are similar to lists but cannot be modified after creation. Tuples are often used for data that shouldn't change.
 
+## Course Structure
+
+This course is organized into focused modules for better learning:
+
+### 1. Basic Operations
+- **`01_tuple_creation_basic_operations.py`** - Creating tuples, accessing elements, basic operations
+- **`02_tuple_slicing.py`** - Slicing tuples with different patterns
+- **`03_tuple_methods.py`** - Tuple methods like count(), index(), membership testing
+
+### 2. Advanced Operations
+- **`04_tuple_operations.py`** - Concatenation, repetition, comparison operations
+- **`05_tuple_unpacking.py`** - Unpacking techniques and extended unpacking
+- **`06_tuple_as_return_values.py`** - Using tuples as function return values
+
+### 3. Special Features
+- **`07_named_tuples.py`** - Named tuples for structured data
+- **`08_builtin_functions_tuples.py`** - Built-in functions working with tuples
+- **`09_tuple_vs_list.py`** - Comparison between tuples and lists
+
+### 4. Practice Problems
+- **`10_practice_problems_1.py`** - Basic practice problems with tuples
+- **`11_practice_problems_2.py`** - Advanced problems including coordinate systems
+
+## How to Use This Course
+
+### Running Individual Files
+Each file can be run independently to focus on specific concepts:
+
+```bash
+# Run basic tuple creation
+python 01_tuple_creation_basic_operations.py
+
+# Run tuple slicing examples
+python 02_tuple_slicing.py
+
+# Run tuple methods
+python 03_tuple_methods.py
+
+# And so on for each file...
+```
+
+### Learning Path
+1. Start with `01_tuple_creation_basic_operations.py` to understand tuple basics
+2. Move to `02_tuple_slicing.py` and `03_tuple_methods.py` for core operations
+3. Study `04_tuple_operations.py` and `05_tuple_unpacking.py` for advanced usage
+4. Learn about `06_tuple_as_return_values.py` for function integration
+5. Explore `07_named_tuples.py` for structured data
+6. Understand `08_builtin_functions_tuples.py` for built-in function usage
+7. Compare with `09_tuple_vs_list.py` to understand when to use each
+8. Practice with `10_practice_problems_1.py` and `11_practice_problems_2.py`
+
 ## Tuple Creation
 ```python
 # Empty tuple
@@ -277,4 +328,4 @@ print(f"List size: {sys.getsizeof(large_list)} bytes")
 ```
 
 ## Practice Examples
-See `practice.py` for hands-on exercises with tuples! 
+Each file contains hands-on exercises with tuples! Start with the basic files and work your way up to the practice problems. 
