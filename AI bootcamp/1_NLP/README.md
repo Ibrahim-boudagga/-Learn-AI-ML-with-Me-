@@ -27,7 +27,6 @@ python -c "import nltk; nltk.download('punkt'); nltk.download('stopwords')"
 
 ### **3. Sentiment Analysis** `3_sentiment_alanlysis/`
 - **Rule-based** - VADER, TextBlob
-- **Transformers** - BERT, DistilBERT
 - **Practical** - Book reviews analysis
 
 ## 🎯 **Learning Path**
