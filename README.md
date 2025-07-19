@@ -13,11 +13,13 @@ cd AI-Course
 ## 📚 **Course Content**
 
 ### **✅ Completed**
+
 - **Python Basics** - Modular learning with practice problems
-- **NumPy Course** - 12 notebooks for AI engineers  
-- **NLP Fundamentals** - Text preprocessing, POS, NER, sentiment analysis, text vectorization
+- **NumPy Course** - 12 notebooks for AI engineers
+- **NLP Fundamentals** - Text preprocessing, POS, NER, sentiment analysis, text vectorization, topic modeling
 
 ### **🚧 Coming Soon**
+
 - **Pandas** - Data manipulation
 - **Machine Learning** - Supervised/unsupervised learning
 - **Deep Learning** - Neural networks
@@ -47,15 +49,16 @@ AI Course/
 - **Python 3.8+**
 - **Jupyter Notebooks**
 - **NumPy, NLTK, SpaCy**
-- **Transformers, PyTorch, scikit-learn**
+- **Transformers, PyTorch, scikit-learn, Gensim**
 
 ## 🏆 **Achievement Checklist**
 
 - [ ] Python basics
-- [ ] NumPy fundamentals  
+- [ ] NumPy fundamentals
 - [ ] NLP preprocessing
 - [ ] Sentiment analysis
 - [ ] Text vectorization
+- [ ] Topic modeling
 - [ ] Real-world projects
 
 **🎉 Complete all to become an AI/ML expert!**
