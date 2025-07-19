@@ -15,7 +15,7 @@ cd AI-Course
 ### **✅ Completed**
 - **Python Basics** - Modular learning with practice problems
 - **NumPy Course** - 12 notebooks for AI engineers  
-- **NLP Fundamentals** - Text preprocessing, POS, NER, sentiment analysis
+- **NLP Fundamentals** - Text preprocessing, POS, NER, sentiment analysis, text vectorization
 
 ### **🚧 Coming Soon**
 - **Pandas** - Data manipulation
@@ -47,7 +47,7 @@ AI Course/
 - **Python 3.8+**
 - **Jupyter Notebooks**
 - **NumPy, NLTK, SpaCy**
-- **Transformers, PyTorch**
+- **Transformers, PyTorch, scikit-learn**
 
 ## 🏆 **Achievement Checklist**
 
@@ -55,6 +55,7 @@ AI Course/
 - [ ] NumPy fundamentals  
 - [ ] NLP preprocessing
 - [ ] Sentiment analysis
+- [ ] Text vectorization
 - [ ] Real-world projects
 
 **🎉 Complete all to become an AI/ML expert!**

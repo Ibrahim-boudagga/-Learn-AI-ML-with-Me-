@@ -30,6 +30,11 @@ python -c "import nltk; nltk.download('punkt'); nltk.download('stopwords')"
 - **Transformers** - BERT, DistilBERT
 - **Practical** - Book reviews analysis
 
+### **4. Text Vectorization** `4_vectorizing_text/`
+- **Bag of Words** - Word frequency representation
+- **TF-IDF** - Term frequency-inverse document frequency
+- **Use case**: Convert text to ML features
+
 ## 🎯 **Learning Path**
 
 1. **Start** → Text preprocessing basics
@@ -43,6 +48,7 @@ python -c "import nltk; nltk.download('punkt'); nltk.download('stopwords')"
 - **spaCy** - Industrial NLP
 - **Transformers** - State-of-the-art models
 - **TextBlob** - Simple text processing
+- **scikit-learn** - Text vectorization
 
 ## 📊 **Quick Example**
 
@@ -63,6 +69,7 @@ print(clean_tokens)  # ['quick', 'brown', 'fox', 'jumps', 'lazy', 'dog']
 - [ ] Text preprocessing
 - [ ] POS tagging & NER  
 - [ ] Sentiment analysis
+- [ ] Text vectorization
 - [ ] Real-world projects
 
 **🎉 Complete all to become an NLP expert!**
