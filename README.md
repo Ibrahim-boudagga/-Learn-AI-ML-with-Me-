@@ -1,14 +1,6 @@
 # 🧠 Learn AI & ML with Me
 
-> **Master AI & Machine Learning step-by-step** 🤖
-
-## 🚀 **Quick Start**
-
-```bash
-# Clone and start learning
-git clone <repository>
-cd AI-Course
-```
+> **Master AI & Machine Learning step-by-step** 
 
 ## 📚 **Course Content**
 
